@@ -63,6 +63,25 @@ All major engineering reports, IEEE research papers, and technical project docum
 
 ---
 
+## 📊 Project Presentations & Review Slides
+
+Official engineering presentation decks are available in the [**`presentations/`**](./presentations/) directory:
+
+- 📊 [**Major Project Review 1 Presentation**](./presentations/23MRE005_Major_Project_Review-1.pptx) — Architecture, block diagrams, and milestone review.
+- 📊 [**Minor Project Final Review Presentation**](./presentations/23MRE005_Minor_Final.pptx) — Real-time control system final defense slides.
+
+---
+
+## 🏆 Certifications & Credentials
+
+Verified certificates are archived in the [**`certificates/`**](./certificates/) directory:
+
+- 📜 [**Problem Solving through Programming in C (NPTEL - IIT Kharagpur, Score: 83%)**](./certificates/Problem%20Solving%20through%20Programming%20in%20C.jpg)
+- 📜 [**IoT & Embedded Systems Technical Certification**](./certificates/IOT_Webinar.jpg)
+- 📜 [**Virtual Summer School on Recent Embedded Trends**](./certificates/Virtual%20Summer%20School%20on%20Recent%20Trends.pdf)
+
+---
+
 ## 🛠️ Core Technical Skills Matrix
 
 - **Programming Languages:** Embedded C (C99/C11, volatile pointers, bitwise operations, memory layout), Python (Automation, PyTest).
