@@ -75,6 +75,5 @@ The system was physically probed and validated using the **Digilent Analog Disco
 
 ## 📂 Source Code
 
-- [src/Traffic_Controller_4Lane.ino](./src/Traffic_Controller_4Lane.ino): Complete, compilable 4-lane adaptive traffic signal firmware.
-- [src/traffic_controller.h](./src/traffic_controller.h): Data structure and state definitions.
+- [src/Traffic_Controller_4Lane.ino](./src/Traffic_Controller_4Lane.ino): Complete, verified 4-lane adaptive traffic signal firmware from thesis Appendix.
 - [reports/23MRE005_MINOR_PROJECT_REPORT.pdf](../reports/23MRE005_MINOR_PROJECT_REPORT.pdf): Full 41-page thesis report.
