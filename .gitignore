@@ -1,0 +1,21 @@
+# Binaries and object files
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.map
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store

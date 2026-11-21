@@ -1,0 +1,63 @@
+[
+  {
+    "scenario_name": "functional_smoke",
+    "passed": true,
+    "p50_latency_ms": 22.19,
+    "p95_latency_ms": 26.65,
+    "p99_latency_ms": 26.65,
+    "avg_power_mw": 14.79,
+    "drop_rate_pct": 0.0,
+    "detection_rate_pct": 100.0,
+    "false_wakes": 0,
+    "failures": [],
+    "root_causes": []
+  },
+  {
+    "scenario_name": "stress_high_rate",
+    "passed": true,
+    "p50_latency_ms": 18.24,
+    "p95_latency_ms": 27.97,
+    "p99_latency_ms": 27.97,
+    "avg_power_mw": 13.15,
+    "drop_rate_pct": 0.0,
+    "detection_rate_pct": 100.0,
+    "false_wakes": 0,
+    "failures": [],
+    "root_causes": []
+  },
+  {
+    "scenario_name": "fault_demo_dsp_throttle",
+    "passed": false,
+    "p50_latency_ms": 83.68,
+    "p95_latency_ms": 87.98,
+    "p99_latency_ms": 87.98,
+    "avg_power_mw": 15.61,
+    "drop_rate_pct": 0.0,
+    "detection_rate_pct": 100.0,
+    "false_wakes": 0,
+    "failures": [
+      "P95 latency 87.98 ms > budget 50.0 ms",
+      "Avg power 15.61 mW > budget 15.0 mW"
+    ],
+    "root_causes": [
+      "[DSP_CLOCK_THROTTLE] (5x, e.g. 'WARN [LPAI_DSP] DSP_CLOCK_THROTTLE freq_mhz=120 seq=66 latency_ms=67.96') -> Hexagon/LPAI DSP clock throttled (thermal or power governor); check DSP OPP vote and thermal mitigation policy."
+    ]
+  },
+  {
+    "scenario_name": "fault_demo_fifo_overflow",
+    "passed": false,
+    "p50_latency_ms": 23.18,
+    "p95_latency_ms": 26.99,
+    "p99_latency_ms": 26.99,
+    "avg_power_mw": 13.14,
+    "drop_rate_pct": 4.0,
+    "detection_rate_pct": 100.0,
+    "false_wakes": 0,
+    "failures": [
+      "Frame drop rate 4.0% > budget 0.5%"
+    ],
+    "root_causes": [
+      "[FIFO_OVERFLOW] (32x, e.g. 'ERR [IMU_DRV] FIFO_OVERFLOW seq=0 rate=400Hz dropped=1') -> IMU Driver / Sensor Hub FIFO overflow detected at high ODR; increase FIFO watermark or drain interval."
+    ]
+  }
+]
