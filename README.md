@@ -49,12 +49,15 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 ## 📄 Project Reports & Technical Documentation
 
-All technical documentation, research papers, and academic reports are organized in the [**`reports/`**](./reports/) directory:
+All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
 
-- 📄 [**Minor Project Technical Report**](./reports/23MRE005_MINOR_PROJECT_REPORT.pdf) — Embedded system architecture, hardware interfacing, and real-time controller design.
-- 📄 [**Advanced Digital System Design (ALU Report)**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design, combinational/sequential logic, and hardware verification.
-- 📄 [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Simulation waveforms, timing constraints, and physical verification.
-- 📄 [**IEEE Research Paper:** *Intelligent Real-Time Traffic Signal System using FreeRTOS*](https://ieeexplore.ieee.org/document/11135576) (IEEE Xplore).
+- 📄 [**IEEE Research Paper (RTITCS)**](./reports/23MRE005_RTITCS_Paper.pdf) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* ([IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
+- 📄 [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
+- 📄 [**Minor Project Technical Report**](./reports/23MRE005_MINOR_PROJECT_REPORT.pdf) — Real-time embedded system architecture and firmware design.
+- 📄 [**Embedded Systems Project (ESP) Report**](./reports/23mre005_ESP_REPORT_SP.pdf) — Hardware peripheral interfacing and microcontroller integration.
+- 📄 [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.
+- 📄 [**ADSD Special Project Report**](./reports/23MRE005_ADSD_SP_REPORT.pdf) — Advanced digital logic synthesis and simulation analysis.
+- 📄 [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Hardware timing constraints and simulation waveforms.
 
 ---
 
