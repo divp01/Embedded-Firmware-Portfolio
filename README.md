@@ -16,6 +16,7 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 | **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RTTCS/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. <br/>• [View Execution Flowchart](./01-FreeRTOS-RTTCS/#system-execution-flowchart) • [Project Report](./01-FreeRTOS-RTTCS/Project_Report.pdf) |
 | **02** | [**SPI Master-Slave Bus Protocol**](./02-SPI-Master-Slave-Protocol/) | Bus Protocols, Interfacing | STM32F103 (Master) to Arduino Uno (Slave) SPI communication via 4-channel logic level shifter. Features length-prefixed frame protocol, 1 MHz clocking, and hardware verification. <br/>• [Project Report](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
 | **03** | [**Embedded C++ Hardware Abstraction**](./03-Embedded-CPP-Hardware-Abstraction/) | Embedded C++, ARM Cortex-M | Bare-metal object-oriented peripheral driver on STM32F103. Features hardware encapsulation, direct register bitmasking, and zero-overhead C++ abstractions. <br/>• [Project Report](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) |
+| **04** | [**8-Bit ALU & FPGA Verification**](./04-FPGA-8Bit-ALU-Verification/) | Verilog HDL, FPGA, HIL Testing | Synthesizable 8-bit ALU on Altera Cyclone II FPGA. Validated via closed-loop Hardware-in-the-Loop testbench with dual Analog Discovery 2 instruments. <br/>• [Project Report](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) |
 
 ---
 
@@ -53,6 +54,16 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 
 ---
 
+### 4. [8-Bit ALU & FPGA Verification](./04-FPGA-8Bit-ALU-Verification/)
+- **Focus Domains:** Verilog HDL, RTL Design, FPGA Synthesis, Hardware-in-the-Loop (HIL) Verification.
+- **Target Hardware:** Altera (Intel) Cyclone II EP2C35F672C6 on Terasic DE2 Development Board.
+- **Key Achievements:**
+  - Implemented an 8-bit combinational ALU in synthesizable Verilog HDL supporting 8 arithmetic and logic operations with 16-bit product retention and status flags (Zero, Carry).
+  - Architected a closed-loop Hardware-in-the-Loop (HIL) automated test harness utilizing dual Digilent Analog Discovery 2 units (one as digital pattern generator, one as logic analyzer at 50 MHz).
+  - Validated full instruction set truth table and verified zero timing glitches under real silicon execution.
+
+---
+
 ## Project Reports & Technical Documentation
 
 All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
@@ -63,7 +74,7 @@ All major engineering reports, IEEE research papers, and technical project docum
 - [**SPI Bus Protocol Implementation Report**](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
 - [**Embedded C++ Hardware Abstraction Report**](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) — Object-oriented hardware abstraction and peripheral driver implementation on STM32.
 - [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.
-- [**ADSD Special Project Report**](./reports/23MRE005_ADSD_SP_REPORT.pdf) — Advanced digital logic synthesis and simulation analysis.
+- [**8-Bit ALU FPGA Verification Report**](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) — RTL design, FPGA synthesis, and Hardware-in-the-Loop logic analyzer verification.
 - [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Hardware timing constraints and simulation waveforms.
 - [**M.Tech Embedded Systems Thesis**](./reports/Nirma_ES_23MRE005_Divyani_Patel.pdf) — Nirma University Embedded Systems Engineering Master's Thesis.
 
