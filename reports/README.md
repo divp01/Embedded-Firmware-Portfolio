@@ -14,7 +14,7 @@ This directory contains full academic, engineering, and research project reports
 | **SPI Bus Protocol Implementation** | Comm Protocols | STM32 to Arduino SPI bus communication via logic level shifter | [**Project_Report.pdf**](../02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
 | **Advanced Digital Design: ALU** | Silicon / VLSI | Arithmetic Logic Unit (ALU) architecture, RTL design, and verification | [**ADSD_ALU.pdf**](./ADSD_ALU.pdf) |
 | **ADSD Special Project Report** | Digital Logic | Advanced digital systems design and simulation analysis | [**23MRE005_ADSD_SP_REPORT.pdf**](./23MRE005_ADSD_SP_REPORT.pdf) |
-| **Embedded Systems Project (ESP)** | Embedded Architecture | Embedded systems design and peripheral integration report | [**23mre005_ESP_REPORT_SP.pdf**](./23mre005_ESP_REPORT_SP.pdf) |
+| **Embedded C++ Hardware Abstraction** | Embedded Architecture | Object-oriented peripheral abstraction and driver on STM32 | [**Project_Report.pdf**](../03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) |
 | **Digital Verification & Timing** | VLSI Verification | Hardware simulation waveforms, timing analysis, and verification | [**23MRE005_TUT5_Pnd.pdf**](./23MRE005_TUT5_Pnd.pdf) |
 | **M.Tech Embedded Systems Thesis** | Academic Credentials | Nirma University Embedded Systems Engineering Master's Thesis | [**Nirma_ES_23MRE005_Divyani_Patel.pdf**](./Nirma_ES_23MRE005_Divyani_Patel.pdf) |
 

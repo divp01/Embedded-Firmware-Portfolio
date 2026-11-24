@@ -15,6 +15,7 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 |---|---|---|---|
 | **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RTTCS/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. <br/>• [View Execution Flowchart](./01-FreeRTOS-RTTCS/#system-execution-flowchart) • [Project Report](./01-FreeRTOS-RTTCS/Project_Report.pdf) |
 | **02** | [**SPI Master-Slave Bus Protocol**](./02-SPI-Master-Slave-Protocol/) | Bus Protocols, Interfacing | STM32F103 (Master) to Arduino Uno (Slave) SPI communication via 4-channel logic level shifter. Features length-prefixed frame protocol, 1 MHz clocking, and hardware verification. <br/>• [Project Report](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
+| **03** | [**Embedded C++ Hardware Abstraction**](./03-Embedded-CPP-Hardware-Abstraction/) | Embedded C++, ARM Cortex-M | Bare-metal object-oriented peripheral driver on STM32F103. Features hardware encapsulation, direct register bitmasking, and zero-overhead C++ abstractions. <br/>• [Project Report](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) |
 
 ---
 
@@ -42,6 +43,16 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 
 ---
 
+### 3. [Embedded C++ Hardware Abstraction](./03-Embedded-CPP-Hardware-Abstraction/)
+- **Focus Domains:** Embedded C++, Bare-Metal ARM Cortex-M, Object-Oriented Hardware Abstraction.
+- **Target Hardware:** STM32F103C8T6 (ARM Cortex-M3 @ 72 MHz).
+- **Key Achievements:**
+  - Encapsulated peripheral state and configuration logic within a lightweight C++ driver class without dynamic memory allocation or vtable overhead.
+  - Implemented direct memory-mapped register manipulation for bus clock gating (`RCC_APB2ENR`), pin direction (`GPIOC_CRH`), and state driving (`GPIOC_ODR`).
+  - Validated deterministic state transitions and scoping on physical breadboard hardware using Keil MDK-ARM.
+
+---
+
 ## Project Reports & Technical Documentation
 
 All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
@@ -50,7 +61,7 @@ All major engineering reports, IEEE research papers, and technical project docum
 - [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
 - [**Minor Project Technical Report**](./01-FreeRTOS-RTTCS/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
 - [**SPI Bus Protocol Implementation Report**](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
-- [**Embedded Systems Project (ESP) Report**](./reports/23mre005_ESP_REPORT_SP.pdf) — Hardware peripheral interfacing and microcontroller integration.
+- [**Embedded C++ Hardware Abstraction Report**](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) — Object-oriented hardware abstraction and peripheral driver implementation on STM32.
 - [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.
 - [**ADSD Special Project Report**](./reports/23MRE005_ADSD_SP_REPORT.pdf) — Advanced digital logic synthesis and simulation analysis.
 - [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Hardware timing constraints and simulation waveforms.
