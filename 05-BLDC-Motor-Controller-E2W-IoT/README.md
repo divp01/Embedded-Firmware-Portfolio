@@ -21,8 +21,8 @@ This project implements the real-time embedded firmware and telematics subsystem
 ### 1. Motor Control Firmware (STM32G431RB)
 
 - **Field-Oriented Control (FOC) Execution:**
-  - Performs Clarke and Park coordinate transforms on shunt-measured phase currents ($I_a, I_b, I_c$) to project stator flux into rotating rotor coordinates ($I_d, I_q$).
-  - Runs dual decoupled discrete PI current loops: regulates $I_q$ (torque demand) while maintaining $I_d = 0$ for maximum efficiency.
+  - Performs Clarke and Park coordinate transforms on shunt-measured phase currents (Ia, Ib, Ic) to project stator flux into rotating rotor coordinates (Id, Iq).
+  - Runs dual decoupled discrete PI current loops: regulates Iq (torque demand) while maintaining Id = 0 for maximum efficiency.
   - Modulates complementary high/low-side PWM channels via Space Vector PWM (SVPWM) with programmable hardware dead-time.
 
 - **Commutation & Operational Modes:**
@@ -47,7 +47,7 @@ This project implements the real-time embedded firmware and telematics subsystem
 
 ## Bench Verification & Vehicle Integration
 
-- **Parameter Tuning:** Stator resistance ($R_s$), inductance ($L_s$), and back-EMF constants extracted via STM32 Motor Profiler; PI gains tuned using STM32 Motor Control Workbench.
+- **Parameter Tuning:** Stator resistance (Rs), inductance (Ls), and back-EMF constants extracted via STM32 Motor Profiler; PI gains tuned using STM32 Motor Control Workbench.
 - **Hardware Validation:** Phase current alignment, dead-time margins, and SVPWM waveforms verified with a digital storage oscilloscope.
 - **Vehicle Testing:** Successfully deployed and validated on an operational electric two-wheeler prototype for acceleration response, cruise stability, brake safety cutoff, and battery swap actuation.
 

@@ -58,7 +58,7 @@ From a low-level peripheral driver and firmware architecture standpoint:
   - The ISR reads data register `SPDR` in a single instruction cycle, preventing Hardware Overrun (`OVR`) conditions without stalling the main processor thread.
 
 - **Bus Timing & Voltage Translation Constraints:**
-  - Interfacing 3.3V LVCMOS to 5V TTL requires active logic level shifting. SCLK is held at 1 MHz (1 us period) to accommodate the propagation delay (~15 ns) and capacitive load ($C_L$) across the bidirectional MOSFET level shifter channels.
+  - Interfacing 3.3V LVCMOS to 5V TTL requires active logic level shifting. SCLK is held at 1 MHz (1 us period) to accommodate the propagation delay (~15 ns) and capacitive load (CL) across the bidirectional MOSFET level shifter channels.
   - Hardware NSS assertion automatically frames the transaction; deassertion triggers frame processing without needing external handshaking pins.
 
 - **Defensive Framing & Memory Safety:**

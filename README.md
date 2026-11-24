@@ -70,7 +70,7 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 - **Focus Domains:** Motor Control Firmware, Field-Oriented Control (FOC), Real-Time State Machines, Cellular Telematics, Embedded Security.
 - **Target Hardware:** STM32G431RB (ARM Cortex-M4 @ 170 MHz), X-NUCLEO-IHM16M1 (3-Phase Inverter Driver), ESP32, GSM SIM800L, GPS NEO-6M.
 - **Key Software Achievements:**
-  - Implemented Field-Oriented Control (FOC) firmware algorithms: Clarke/Park vector transforms, decoupled $I_d$/$I_q$ PI current regulation loops, and Space Vector PWM (SVPWM) duty-cycle modulation.
+  - Implemented Field-Oriented Control (FOC) firmware algorithms: Clarke/Park vector transforms, decoupled Id / Iq PI current regulation loops, and Space Vector PWM (SVPWM) duty-cycle modulation.
   - Architected hybrid commutation state machine: Hall sensor feedback for low-speed/standstill startup and Back-EMF (BEMF) state observer for high-speed sensorless operation.
   - Developed ADC throttle digital filtering pipeline and interrupt-driven cruise control state machine with instantaneous, fail-safe brake override.
   - Engineered ESP32 telematics firmware: cellular modem communication (SIM800L), real-time GPS location tracking (NEO-6M), and dual-mode battery swap authentication (Cloud HTTP API with local captive Wi-Fi fallback and 3-attempt lockout security).
