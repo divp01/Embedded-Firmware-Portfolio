@@ -53,7 +53,7 @@ All major engineering reports, IEEE research papers, and technical project docum
 
 - 🔗 [**IEEE Research Paper (RTITCS)**](https://ieeexplore.ieee.org/document/11135576) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* (Published on [IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
 - 📄 [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
-- 📄 [**Minor Project Technical Report**](./reports/23MRE005_MINOR_PROJECT_REPORT.pdf) — Real-time embedded system architecture and firmware design.
+- 📄 [**Minor Project Technical Report**](./01-FreeRTOS-RealTime-Controller/23MRE005_MINOR_PROJECT_REPORT.pdf) — Real-time embedded system architecture and firmware design.
 - 📄 [**SPI Protocol & Design (PnD) Report**](./reports/PnD_SPI.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
 - 📄 [**Embedded Systems Project (ESP) Report**](./reports/23mre005_ESP_REPORT_SP.pdf) — Hardware peripheral interfacing and microcontroller integration.
 - 📄 [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.

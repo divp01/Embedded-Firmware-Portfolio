@@ -10,7 +10,7 @@
 > **Course:** 6EC191 Minor Project Report, Department of Electronics & Communication Engineering, Nirma University.  
 > **Author:** Divyani Patel (23MRE005)  
 > **Direct IEEE Link:** [https://ieeexplore.ieee.org/document/11135576](https://ieeexplore.ieee.org/document/11135576)  
-> **Full PDF Report:** [View Report PDF in `reports/23MRE005_MINOR_PROJECT_REPORT.pdf`](../reports/23MRE005_MINOR_PROJECT_REPORT.pdf)
+> **Full PDF Report:** [View Report PDF (23MRE005_MINOR_PROJECT_REPORT.pdf)](./23MRE005_MINOR_PROJECT_REPORT.pdf)
 
 ---
 
@@ -76,4 +76,4 @@ The system was physically probed and validated using the **Digilent Analog Disco
 ## 📂 Source Code
 
 - [src/Traffic_Controller_4Lane.ino](./src/Traffic_Controller_4Lane.ino): Complete, verified 4-lane adaptive traffic signal firmware from thesis Appendix.
-- [reports/23MRE005_MINOR_PROJECT_REPORT.pdf](../reports/23MRE005_MINOR_PROJECT_REPORT.pdf): Full 41-page thesis report.
+- [23MRE005_MINOR_PROJECT_REPORT.pdf](./23MRE005_MINOR_PROJECT_REPORT.pdf): Full 41-page thesis report.
