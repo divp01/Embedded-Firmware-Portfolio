@@ -16,18 +16,31 @@ By applying data encapsulation and abstraction directly over memory-mapped hardw
 
 ## Class Architecture & Hardware Model
 
-The driver models physical hardware components through a structured three-tier object-oriented architecture:
+```mermaid
+classDiagram
+    class LED {
+        -LedColor_type color
+        -LedState_type state
+        +Led(LedColor_type _color)
+        +Led_SetState(LedState_type _state)
+    }
+```
 
-- **Hardware Identity & State Modeling:**
-  - Utilizes strongly-typed enumerations for hardware channel mapping and operational state (ON/OFF), ensuring type safety and preventing invalid configurations at compile time.
+### Architectural Class Definitions & Design Steps
 
-- **Data Encapsulation & Hardware Hiding:**
-  - **Private Attributes:** Physical pin mappings and internal device states are strictly private, preventing higher application layers from directly altering low-level peripheral state.
-  - **Public Interface:** Restricts caller access to well-defined methods (constructor for initialization, dedicated setter for actuation), creating a robust hardware abstraction layer (HAL) boundary.
+The driver models physical hardware components through a structured, object-oriented abstraction model without runtime memory or dynamic dispatch overhead:
 
-- **Deterministic Operational Flow:**
-  1. **Automated Initialization via Constructor:** Instantiating a peripheral object automatically gates the peripheral clock in `RCC_APB2ENR` and configures output direction in `GPIOC_CRH`, guaranteeing the hardware is initialized prior to use.
-  2. **Safe Runtime Actuation:** State transitions perform bitwise atomic writes directly to output data registers (`GPIOC_ODR`), isolating neighboring pin states and avoiding read-modify-write hazards.
+- **Step 1: Hardware Identity & State Modeling**
+  - **`LedColor_type`:** Strongly-typed enumeration mapping hardware channels (e.g., Port C pins PC13, PC14, PC15). Enforces compile-time type safety and prevents assigning invalid pin designations.
+  - **`LedState_type`:** Strongly-typed enumeration representing logical actuation states (ON / OFF). Decouples application state logic from electrical active-low / active-high polarity.
+
+- **Step 2: Data Encapsulation & Hardware Protection (Private Attributes)**
+  - **`- color: LedColor_type`:** Private attribute storing the assigned hardware channel. Direct external mutation is blocked, protecting hardware configuration integrity.
+  - **`- state: LedState_type`:** Private attribute tracking the current operational state of the peripheral instance.
+
+- **Step 3: Deterministic Lifecycle & Actuation (Public Interface)**
+  - **`+ Led(_color: LedColor_type)` (Constructor):** Handles automated hardware bring-up during object instantiation. Gates the peripheral clock on the APB2 bus (`RCC_APB2ENR`) and configures output direction and speed in the GPIO port configuration register (`GPIOC_CRH`), ensuring the hardware is valid prior to use.
+  - **`+ Led_SetState(_state: LedState_type)` (Actuation Method):** Executes atomic bitmask writes directly to the port output data register (`GPIOC_ODR`), isolating neighboring pin states and avoiding read-modify-write hazards.
 
 ---
 

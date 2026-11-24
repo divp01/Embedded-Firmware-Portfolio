@@ -17,7 +17,6 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 | **02** | [**SPI Master-Slave Bus Protocol**](./02-SPI-Master-Slave-Protocol/) | Bus Protocols, Interfacing | STM32F103 (Master) to Arduino Uno (Slave) SPI communication via 4-channel logic level shifter. Features length-prefixed frame protocol, 1 MHz clocking, and hardware verification. <br/>• [Project Report](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
 | **03** | [**Embedded C++ Hardware Abstraction**](./03-Embedded-CPP-Hardware-Abstraction/) | Embedded C++, ARM Cortex-M | Bare-metal object-oriented peripheral driver on STM32F103. Features hardware encapsulation, direct register bitmasking, and zero-overhead C++ abstractions. <br/>• [Project Report](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) |
 | **04** | [**8-Bit ALU & FPGA Verification**](./04-FPGA-8Bit-ALU-Verification/) | Verilog HDL, FPGA, HIL Testing | Synthesizable 8-bit ALU on Altera Cyclone II FPGA. Validated via closed-loop Hardware-in-the-Loop testbench with dual Analog Discovery 2 instruments. <br/>• [Project Report](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) |
-| **05** | [**Intel Server UEFI Platform Firmware**](./05-UEFI-Platform-Firmware-EDK2/) | UEFI / BIOS, x86_64, EDK II | Platform firmware initialization for Intel Servers using TianoCore EDK II. Features PEIM-to-PEIM Interface (PPI) communication, Cache-as-RAM, and boot flow architecture. <br/>• [Project Presentation](./05-UEFI-Platform-Firmware-EDK2/Project_Presentation.pptx) |
 
 ---
 
@@ -65,16 +64,6 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 
 ---
 
-### 5. [Intel Server UEFI Platform Firmware](./05-UEFI-Platform-Firmware-EDK2/)
-- **Focus Domains:** UEFI PI Boot Phases (SEC, PEI, DXE, BDS), x86_64 Architecture, TianoCore EDK II.
-- **Target Architecture:** Intel Server Platforms / x86_64.
-- **Key Achievements:**
-  - Developed modular Pre-EFI Initialization Modules (PEIMs) communicating through unique GUID-based PEIM-to-PEIM Interfaces (PPI).
-  - Configured Cache-as-RAM (CAR) pre-memory execution environment and EDK II package build rules (`.inf`, `.dec`, `.dsc`).
-  - Analyzed handoff block (HOB) propagation and platform transitions from reset vector to DXE phase.
-
----
-
 ## Project Reports & Technical Documentation
 
 All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
@@ -102,9 +91,9 @@ Verified certificates are archived in the [**`certificates/`**](./certificates/)
 
 ## Core Technical Skills Matrix
 
-- **Programming Languages:** Embedded C (C99/C11, volatile pointers, bitwise operations, memory layout), Python (Automation, PyTest).
-- **Architectures:** ARM Cortex-M3/M4 (STM32, Blue Pill), x86_64 Platforms (Intel Xeon, PCH, Boot Guard, UEFI).
-- **RTOS & Systems:** FreeRTOS (Tasks, Queues, Semaphores, Mutexes, Event Groups), Bare-Metal Bring-up, Linker Scripts (`linker.ld`), Startup Code (`startup.c`).
-- **Communication Protocols:** SPI, UART, I2C, CAN Bus, DMA, PCIe Gen 5, SerDes (Equalization, CDR, Link Training).
-- **Lab & Debug Equipment:** Logic Analyzer (Saleae), Oscilloscope, JTAG / SWD (ST-Link, OpenOCD, GDB), Intel ITP / OpenIPC.
-- **Tools & Build Systems:** GNU Arm Embedded Toolchain (`arm-none-eabi-gcc`), Makefiles, Git, VS Code.
+- **Programming Languages:** Embedded C (C99/C11, volatile pointers, bitwise operations, memory layout), Embedded C++, Python (Automation, Test Scripting), Verilog HDL.
+- **Architectures:** ARM Cortex-M3/M4 (STM32, Blue Pill), AVR (ATmega2560), Altera / Intel FPGA (Cyclone II).
+- **RTOS & Systems:** FreeRTOS (Tasks, Queues, Semaphores, Mutexes, Event Groups), Bare-Metal Hardware Bring-up, Memory-Mapped Register Programming.
+- **Communication Protocols:** SPI, UART, I2C, GPIO alternate functions, cross-voltage logic interfacing.
+- **Lab & Debug Equipment:** Digilent Analog Discovery 2 (Logic Analyzer & Pattern Generator), Digital Storage Oscilloscope (DSO), JTAG / SWD (ST-Link V2, Keil uVision, OpenOCD, GDB).
+- **Tools & Build Systems:** GNU Arm Embedded Toolchain (`arm-none-eabi-gcc`), Keil MDK-ARM v5, Quartus II, Git, Makefiles.
