@@ -11,7 +11,7 @@ This directory contains full academic, engineering, and research project reports
 | **IEEE Research Paper (RTITCS)** | Research Publication | *Intelligent Real-Time Traffic Signal System using FreeRTOS* | [**IEEE Xplore (Direct Link)**](https://ieeexplore.ieee.org/document/11135576) |
 | **Major Project Report** | Capstone Engineering | Comprehensive Major Engineering Project Report | [**19BEE032_MAJOR_PROJECT.pdf**](./19BEE032_MAJOR%20PROJECT.pdf) |
 | **Minor Project Report** | Embedded Systems | Microcontroller interfacing, real-time control, firmware design | [**Project_Report.pdf**](../01-FreeRTOS-RTTCS/Project_Report.pdf) |
-| **SPI Protocol & Design (PnD)** | Comm Protocols | Physical design and protocol verification of SPI bus interfacing | [**PnD_SPI.pdf**](./PnD_SPI.pdf) |
+| **SPI Bus Protocol Implementation** | Comm Protocols | STM32 to Arduino SPI bus communication via logic level shifter | [**Project_Report.pdf**](../02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
 | **Advanced Digital Design: ALU** | Silicon / VLSI | Arithmetic Logic Unit (ALU) architecture, RTL design, and verification | [**ADSD_ALU.pdf**](./ADSD_ALU.pdf) |
 | **ADSD Special Project Report** | Digital Logic | Advanced digital systems design and simulation analysis | [**23MRE005_ADSD_SP_REPORT.pdf**](./23MRE005_ADSD_SP_REPORT.pdf) |
 | **Embedded Systems Project (ESP)** | Embedded Architecture | Embedded systems design and peripheral integration report | [**23mre005_ESP_REPORT_SP.pdf**](./23mre005_ESP_REPORT_SP.pdf) |

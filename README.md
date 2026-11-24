@@ -14,6 +14,7 @@ Welcome to my academic and research embedded systems engineering portfolio. This
 | # | Project | Key Domains | Core Highlights |
 |---|---|---|---|
 | **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RTTCS/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. <br/>• [View Execution Flowchart](./01-FreeRTOS-RTTCS/#system-execution-flowchart) • [Project Report](./01-FreeRTOS-RTTCS/Project_Report.pdf) |
+| **02** | [**SPI Master-Slave Bus Protocol**](./02-SPI-Master-Slave-Protocol/) | Bus Protocols, Interfacing | STM32F103 (Master) to Arduino Uno (Slave) SPI communication via 4-channel logic level shifter. Features length-prefixed frame protocol, 1 MHz clocking, and hardware verification. <br/>• [Project Report](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
 
 ---
 
@@ -30,6 +31,17 @@ Welcome to my academic and research embedded systems engineering portfolio. This
 
 ---
 
+### 2. [SPI Master-Slave Bus Protocol](./02-SPI-Master-Slave-Protocol/)
+- **Course:** Processor Architecture & Design [6EC202], Nirma University.
+- **Hardware Architecture:** STM32F103 (3.3V Master) interfaced to Arduino Uno (5V Slave) across a 4-channel bidirectional logic level shifter.
+- **Bus Specifications:** 1 MHz SCLK (Prescaler 8 from 8 MHz core), Mode 0 (CPOL=0, CPHA=0), 8-bit MSB-first frame format, hardware NSS management.
+- **Key Achievements:**
+  - Implemented length-prefixed dynamic transmission protocol preventing buffer overruns on the receiver.
+  - Configured hardware GPIO alternate functions and clock gating via STM32 registers and HAL drivers.
+  - Physically validated on breadboard setup with ST-Link V2 and Arduino serial monitoring.
+
+---
+
 ## Project Reports & Technical Documentation
 
 All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
@@ -37,7 +49,7 @@ All major engineering reports, IEEE research papers, and technical project docum
 - [**IEEE Research Paper (RTITCS)**](https://ieeexplore.ieee.org/document/11135576) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* (Published on [IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
 - [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
 - [**Minor Project Technical Report**](./01-FreeRTOS-RTTCS/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
-- [**SPI Protocol & Design (PnD) Report**](./reports/PnD_SPI.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
+- [**SPI Bus Protocol Implementation Report**](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
 - [**Embedded Systems Project (ESP) Report**](./reports/23mre005_ESP_REPORT_SP.pdf) — Hardware peripheral interfacing and microcontroller integration.
 - [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.
 - [**ADSD Special Project Report**](./reports/23MRE005_ADSD_SP_REPORT.pdf) — Advanced digital logic synthesis and simulation analysis.
