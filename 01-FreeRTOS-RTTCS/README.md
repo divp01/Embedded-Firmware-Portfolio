@@ -1,4 +1,4 @@
-# FreeRTOS - RTTCS (Real-Time Traffic Control System)
+# Intelligent Real-Time Traffic Signal System using FreeRTOS
 
 [![Publication](https://img.shields.io/badge/IEEE%20Xplore-Published-blue)](https://ieeexplore.ieee.org/document/11135576)
 [![Language](https://img.shields.io/badge/Language-Embedded%20C%2FC%2B%2B-orange.svg)]()
