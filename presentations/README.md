@@ -4,7 +4,7 @@ This directory contains official engineering project presentation slide decks (.
 
 ---
 
-## 📊 Presentation Decks
+## Presentation Decks
 
 | Presentation | Project Type | Description | File Link |
 |---|---|---|---|

@@ -10,17 +10,17 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 ---
 
-## 🌟 Featured Projects
+## Featured Projects
 
 | # | Project | Key Domains | Core Highlights |
 |---|---|---|---|
-| **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RealTime-Controller/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. <br/>• [📊 View Execution Flowchart](./01-FreeRTOS-RealTime-Controller/#system-execution-flowchart) • [📄 Project Report](./01-FreeRTOS-RealTime-Controller/Project_Report.pdf) |
+| **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RealTime-Controller/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. <br/>• [View Execution Flowchart](./01-FreeRTOS-RealTime-Controller/#system-execution-flowchart) • [Project Report](./01-FreeRTOS-RealTime-Controller/Project_Report.pdf) |
 | **02** | [**STM32 Bare-Metal Hardware Drivers**](./02-STM32-BareMetal-Firmware/) | Bare-Metal C, ARM Cortex-M | Direct register-level programming (`-nostdlib`) on STM32F103 (Blue Pill). Features custom startup vector table, SysTick low-power WFI sleep, Full-Duplex SPI, lock-free Ring Buffer, and **Circular DMA Ping-Pong streaming**. |
 | **03** | [**Firmware Test Automation & KPI Suite**](./03-Firmware-Test-Automation/) | Python, CI/CD, Verification | Automated hardware-in-the-loop (HIL) test harness and KPI regression framework. Generates real-time HTML test execution dashboards and latency metrics. |
 
 ---
 
-## 📑 Technical Architecture Summaries
+## Technical Architecture Summaries
 
 ### 1. [FreeRTOS Real-Time Controller (IEEE Publication)](./01-FreeRTOS-RealTime-Controller/)
 - **Publication:** *Intelligent Real-Time Traffic Signal System using FreeRTOS* ([IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
@@ -49,42 +49,42 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 ---
 
-## 📄 Project Reports & Technical Documentation
+## Project Reports & Technical Documentation
 
 All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
 
-- 🔗 [**IEEE Research Paper (RTITCS)**](https://ieeexplore.ieee.org/document/11135576) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* (Published on [IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
-- 📄 [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
-- 📄 [**Minor Project Technical Report**](./01-FreeRTOS-RealTime-Controller/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
-- 📄 [**SPI Protocol & Design (PnD) Report**](./reports/PnD_SPI.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
-- 📄 [**Embedded Systems Project (ESP) Report**](./reports/23mre005_ESP_REPORT_SP.pdf) — Hardware peripheral interfacing and microcontroller integration.
-- 📄 [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.
-- 📄 [**ADSD Special Project Report**](./reports/23MRE005_ADSD_SP_REPORT.pdf) — Advanced digital logic synthesis and simulation analysis.
-- 📄 [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Hardware timing constraints and simulation waveforms.
-- 📄 [**M.Tech Embedded Systems Thesis**](./reports/Nirma_ES_23MRE005_Divyani_Patel.pdf) — Nirma University Embedded Systems Engineering Master's Thesis.
+- [**IEEE Research Paper (RTITCS)**](https://ieeexplore.ieee.org/document/11135576) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* (Published on [IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
+- [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
+- [**Minor Project Technical Report**](./01-FreeRTOS-RealTime-Controller/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
+- [**SPI Protocol & Design (PnD) Report**](./reports/PnD_SPI.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
+- [**Embedded Systems Project (ESP) Report**](./reports/23mre005_ESP_REPORT_SP.pdf) — Hardware peripheral interfacing and microcontroller integration.
+- [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.
+- [**ADSD Special Project Report**](./reports/23MRE005_ADSD_SP_REPORT.pdf) — Advanced digital logic synthesis and simulation analysis.
+- [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Hardware timing constraints and simulation waveforms.
+- [**M.Tech Embedded Systems Thesis**](./reports/Nirma_ES_23MRE005_Divyani_Patel.pdf) — Nirma University Embedded Systems Engineering Master's Thesis.
 
 ---
 
-## 📊 Project Presentations & Review Slides
+## Project Presentations & Review Slides
 
 Official engineering presentation decks are available in the [**`presentations/`**](./presentations/) directory:
 
-- 📊 [**Major Project Review 1 Presentation**](./presentations/23MRE005_Major_Project_Review-1.pptx) — Architecture, block diagrams, and milestone review.
-- 📊 [**Minor Project Final Review Presentation**](./presentations/23MRE005_Minor_Final.pptx) — Real-time control system final defense slides.
+- [**Major Project Review 1 Presentation**](./presentations/23MRE005_Major_Project_Review-1.pptx) — Architecture, block diagrams, and milestone review.
+- [**Minor Project Final Review Presentation**](./presentations/23MRE005_Minor_Final.pptx) — Real-time control system final defense slides.
 
 ---
 
-## 🏆 Certifications & Credentials
+## Certifications & Credentials
 
 Verified certificates are archived in the [**`certificates/`**](./certificates/) directory:
 
-- 📜 [**Problem Solving through Programming in C (NPTEL - IIT Kharagpur, Score: 83%)**](./certificates/Problem%20Solving%20through%20Programming%20in%20C.jpg)
-- 📜 [**IoT & Embedded Systems Technical Certification**](./certificates/IOT_Webinar.jpg)
-- 📜 [**Virtual Summer School on Recent Embedded Trends**](./certificates/Virtual%20Summer%20School%20on%20Recent%20Trends.pdf)
+- [**Problem Solving through Programming in C (NPTEL - IIT Kharagpur, Score: 83%)**](./certificates/Problem%20Solving%20through%20Programming%20in%20C.jpg)
+- [**IoT & Embedded Systems Technical Certification**](./certificates/IOT_Webinar.jpg)
+- [**Virtual Summer School on Recent Embedded Trends**](./certificates/Virtual%20Summer%20School%20on%20Recent%20Trends.pdf)
 
 ---
 
-## 🛠️ Core Technical Skills Matrix
+## Core Technical Skills Matrix
 
 - **Programming Languages:** Embedded C (C99/C11, volatile pointers, bitwise operations, memory layout), Python (Automation, PyTest).
 - **Architectures:** ARM Cortex-M3/M4 (STM32, Blue Pill), x86_64 Platforms (Intel Xeon, PCH, Boot Guard, UEFI).

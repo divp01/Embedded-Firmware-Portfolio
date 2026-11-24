@@ -4,7 +4,7 @@ This directory contains full academic, engineering, and research project reports
 
 ---
 
-## 📑 Complete Reports Index
+## Complete Reports Index
 
 | Document | Category | Domain & Description | Direct View Link |
 |---|---|---|---|

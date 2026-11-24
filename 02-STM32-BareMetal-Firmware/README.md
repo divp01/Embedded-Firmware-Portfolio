@@ -6,7 +6,7 @@
 
 ---
 
-## 📁 Repository Directory Structure
+## Repository Directory Structure
 
 ```
 BluePill_Blink/
@@ -31,7 +31,7 @@ BluePill_Blink/
 
 ---
 
-## 🎯 The 3 Educational Lessons
+## The 3 Educational Lessons
 
 ### Lesson 1: [01_systick_blink.c](file:///d:/Development/Firmware/BluePill_Blink/app/01_systick_blink.c)
 - **Concept:** ARM Cortex-M3 core timer exception (Exception #15).
@@ -55,7 +55,7 @@ BluePill_Blink/
 
 ---
 
-## ⚡ How to Build
+## How to Build
 
 Run `make` to compile all 3 standalone lessons in one go:
 ```bash
@@ -76,7 +76,7 @@ make clean
 
 ---
 
-## 🔌 Hardware Pinout on Blue Pill (STM32F103)
+## Hardware Pinout on Blue Pill (STM32F103)
 
 ### Onboard LED:
 - **PC13:** Active-Low User LED (Drive LOW = ON, Drive HIGH = OFF).
@@ -91,7 +91,7 @@ make clean
 
 ---
 
-## 🚀 How to Flash (ST-Link V2)
+## How to Flash (ST-Link V2)
 
 ### Using Makefile Shortcuts (via OpenOCD):
 ```bash

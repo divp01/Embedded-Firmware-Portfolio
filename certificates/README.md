@@ -4,7 +4,7 @@ This directory stores verified professional certificates and course completion c
 
 ---
 
-## 🏆 Credentials Index
+## Credentials Index
 
 | Certification / Course | Issuing Body | Focus Domain | Certificate Link |
 |---|---|---|---|

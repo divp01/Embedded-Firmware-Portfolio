@@ -15,7 +15,7 @@
 
 ---
 
-## 🚦 Project Overview
+## Project Overview
 
 Urban traffic congestion in Indian cities causes severe economic losses and air pollution due to inflexible, fixed-timing traffic light controllers. This project designs and implements an **Intelligent Traffic Control System (ITCS)** on an **ATmega2560 (Arduino Mega 2560 @ 16 MHz)** running **FreeRTOS**.
 
@@ -23,7 +23,7 @@ The system dynamically detects vehicle density across 4 lanes using high/low IR 
 
 ---
 
-## 🛠️ Hardware & Software Architecture
+## Hardware & Software Architecture
 
 ### Hardware Components:
 - **Microcontroller:** Arduino Mega 2560 (ATmega2560 @ 16 MHz, 256 KB Flash, 8 KB SRAM, 54 Digital I/O pins).
@@ -37,10 +37,10 @@ The system dynamically detects vehicle density across 4 lanes using high/low IR 
 
 ---
 
-## ⚙️ FreeRTOS Task Structure & Priority Allocation
+## FreeRTOS Task Structure & Priority Allocation
 
 <a id="system-execution-flowchart"></a>
-### 📊 Dynamic Scheduling Flow
+### Dynamic Scheduling Flow
 
 ```mermaid
 flowchart LR
@@ -53,7 +53,7 @@ flowchart LR
     Reset --> Master
 ```
 
-### 🎯 Key Execution Mechanics
+### Key Execution Mechanics
 
 - **Dynamic Priority Allocation (`vTaskPrioritySet`)**: Sensor pairs (High & Low) detect lane density. High-density lanes receive elevated priority and extended green time (**7 ticks vs. 5 ticks**).
 - **Cooperative Task Handoff**: Non-preemptive model (`configUSE_PREEMPTION = 0`). Active lane task executes its countdown, then suspends itself (`vTaskSuspend`), yielding CPU to the next highest-priority lane.
@@ -61,7 +61,7 @@ flowchart LR
 
 ---
 
-## 🔬 Experimental Validation (Analog Discovery 2)
+## Experimental Validation (Analog Discovery 2)
 
 The system was physically probed and validated using the **Digilent Analog Discovery 2 USB Logic Analyzer**:
 - **High-Density Lane (H=1, L=1):** Measured green signal active duration = **9.07 seconds**.
@@ -70,7 +70,7 @@ The system was physically probed and validated using the **Digilent Analog Disco
 
 ---
 
-## 📂 Source Code
+## Source Code & Documentation
 
 - [src/Traffic_Controller_4Lane.ino](./src/Traffic_Controller_4Lane.ino): Complete, verified 4-lane adaptive traffic signal firmware from thesis Appendix.
 - [Project_Report.pdf](./Project_Report.pdf): Full 41-page thesis report.
