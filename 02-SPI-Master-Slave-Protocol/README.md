@@ -1,17 +1,16 @@
 # Implementation of SPI Bus Protocol (STM32 to Arduino)
 
-> **Course:** Processor Architecture & Design [6EC202], Department of Electronics & Communication Engineering, Nirma University  
-> **Author:** Divyani Patel (23MRE005)  
-> **Submitted to:** Dr. Dhaval Shah  
-> **Project Report / Presentation:** [View Technical Report (Project_Report.pdf)](./Project_Report.pdf)
+> **Core Technologies:** Embedded C, ARM Cortex-M3 (STM32F103C8T6), ATmega328P, SPI Bus Protocol, Bidirectional Voltage Translation  
+> **Bench Tools & Debug:** ST-Link V2 Debugger, Keil uVision MDK-ARM, Serial Monitor (COM5), Hardware Bench Setup  
+> **Engineering Documentation:** [View Technical Architecture Report (Project_Report.pdf)](./Project_Report.pdf)
 
 ---
 
 ## Project Overview
 
-This academic project implements a hardware SPI bus communication link between an STM32F103C8T6 microcontroller operating as the SPI Master and an Arduino Uno (ATmega328P) operating as the SPI Slave. 
+This firmware project implements a robust, hardware-validated SPI (Serial Peripheral Interface) communication protocol bridging an **ARM Cortex-M3 microcontroller (STM32F103C8T6)** operating as the SPI Master and an **AVR microcontroller (Arduino Uno / ATmega328P)** operating as the SPI Slave.
 
-Because the STM32 operates at 3.3V logic and the Arduino operates at 5V logic, the bus lines are bridged through a 4-channel bidirectional logic level shifter to ensure safe and reliable signal transmission.
+Because the STM32 operates at 3.3V logic and the Arduino operates at 5V logic, the high-speed bus lines are bridged through a 4-channel bidirectional logic level shifter to prevent IO overvoltage and maintain signal integrity.
 
 ---
 
@@ -37,7 +36,7 @@ Because the STM32 operates at 3.3V logic and the Arduino operates at 5V logic, t
 
 ---
 
-## Hardware Verification & Results
+## Hardware Verification & Bench Results
 
 The physical system was connected on a breadboard using an ST-Link V2 debugger and USB serial monitoring interface:
 - Master transmitted length-prefixed data strings across the isolated level shifter.
@@ -46,6 +45,15 @@ The physical system was connected on a breadboard using an ST-Link V2 debugger a
 
 ---
 
-## Project Documentation
+## Key Engineering Competencies Demonstrated
 
-- [Project_Report.pdf](./Project_Report.pdf): Complete technical slides and hardware documentation.
+- **Heterogeneous Architecture Interfacing:** Bridged 32-bit ARM Cortex-M and 8-bit AVR microcontrollers across mixed voltage levels (3.3V / 5V).
+- **Bus Timing & Prescaling:** Derived 1 MHz SCLK from 8 MHz core clock via hardware prescaler configuration while respecting SPI Mode 0 setup and hold constraints.
+- **Robust Framing Protocol:** Implemented length-prefixed framing to eliminate buffer overrun hazards without software polling overhead.
+- **Hardware-in-the-Loop Validation:** Verified transmission end-to-end using dedicated hardware debuggers (ST-Link V2) and real-time serial telemetry.
+
+---
+
+## Technical Documentation
+
+- [Project_Report.pdf](./Project_Report.pdf): Engineering presentation and hardware architecture documentation.

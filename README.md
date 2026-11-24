@@ -5,7 +5,7 @@
 [![RTOS](https://img.shields.io/badge/RTOS-FreeRTOS-green.svg)]()
 [![Publication](https://img.shields.io/badge/IEEE%20Xplore-Published-brightgreen)](https://ieeexplore.ieee.org/document/11135576)
 
-Welcome to my academic and research embedded systems engineering portfolio. This repository showcases my university engineering projects, peer-reviewed IEEE publication, technical project reports, and embedded firmware implementations.
+Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository showcases production-grade embedded firmware, real-time operating systems (FreeRTOS), hardware communication bus protocols (SPI, UART, I2C), low-level hardware register programming, and automated hardware bench verification.
 
 ---
 
@@ -32,7 +32,7 @@ Welcome to my academic and research embedded systems engineering portfolio. This
 ---
 
 ### 2. [SPI Master-Slave Bus Protocol](./02-SPI-Master-Slave-Protocol/)
-- **Course:** Processor Architecture & Design [6EC202], Nirma University.
+- **Focus Domains:** Hardware Bus Protocols, Cross-Voltage Logic Translation, Low-Level Driver Architecture.
 - **Hardware Architecture:** STM32F103 (3.3V Master) interfaced to Arduino Uno (5V Slave) across a 4-channel bidirectional logic level shifter.
 - **Bus Specifications:** 1 MHz SCLK (Prescaler 8 from 8 MHz core), Mode 0 (CPOL=0, CPHA=0), 8-bit MSB-first frame format, hardware NSS management.
 - **Key Achievements:**
