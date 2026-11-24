@@ -14,7 +14,7 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 | # | Project | Key Domains | Core Highlights |
 |---|---|---|---|
-| **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RealTime-Controller/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-tasking FreeRTOS firmware with priority inheritance mutexes, thread-safe queues, and zero-jitter ISR deferred context switching (`portYIELD_FROM_ISR`). |
+| **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RealTime-Controller/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. |
 | **02** | [**STM32 Bare-Metal Hardware Drivers**](./02-STM32-BareMetal-Firmware/) | Bare-Metal C, ARM Cortex-M | Direct register-level programming (`-nostdlib`) on STM32F103 (Blue Pill). Features custom startup vector table, SysTick low-power WFI sleep, Full-Duplex SPI, lock-free Ring Buffer, and **Circular DMA Ping-Pong streaming**. |
 | **03** | [**Firmware Test Automation & KPI Suite**](./03-Firmware-Test-Automation/) | Python, CI/CD, Verification | Automated hardware-in-the-loop (HIL) test harness and KPI regression framework. Generates real-time HTML test execution dashboards and latency metrics. |
 
@@ -25,9 +25,10 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 ### 1. [FreeRTOS Real-Time Controller (IEEE Publication)](./01-FreeRTOS-RealTime-Controller/)
 - **Publication:** *Intelligent Real-Time Traffic Signal System using FreeRTOS* ([IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
 - **Key Achievements:**
-  - Designed deterministic priority tiers (Sensor Ingestion Task, Timing Algorithm Task, Actuation Task).
-  - Resolved potential **Priority Inversion** on shared intersection states using **Mutexes with Priority Inheritance**.
-  - Tuned task stack allocations in SRAM using `uxTaskGetStackHighWaterMark()` and canary overflow detection.
+  - Implemented dynamic runtime priority reassignment (`vTaskPrioritySet()`) based on IR sensor density detection across 4 lanes.
+  - Designed cooperative priority handoff architecture using `vTaskSuspend()` and `vTaskResume()` cycle synchronization.
+  - Dynamically modulated green signal duty intervals (7 ticks for high congestion vs. 5 ticks for normal flow).
+  - Hardware validated using Digilent Analog Discovery 2 logic analyzer and pattern generator.
 
 ---
 
