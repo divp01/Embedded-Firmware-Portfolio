@@ -78,27 +78,22 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 
 ---
 
-## Project Reports & Technical Documentation
+## Research Publications & Technical Documentation
 
-All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
-
-- [**IEEE Research Paper (RTITCS)**](https://ieeexplore.ieee.org/document/11135576) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* (Published on [IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
-- [**E2W BLDC Motor Controller & IoT Telematics Report**](./05-BLDC-Motor-Controller-E2W-IoT/Project_Report.pdf) — Comprehensive design and vehicle validation report of FOC motor driver and telematics locking system.
-- [**Minor Project Technical Report**](./01-FreeRTOS-RTTCS/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
-- [**SPI Bus Protocol Implementation Report**](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
-- [**Embedded C++ Hardware Abstraction Report**](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) — Object-oriented hardware abstraction and peripheral driver implementation on STM32.
-- [**8-Bit ALU FPGA Verification Report**](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) — RTL design, FPGA synthesis, and Hardware-in-the-Loop logic analyzer verification.
-- [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Hardware timing constraints and simulation waveforms.
+- **IEEE Research Paper (RTITCS):** *Intelligent Real-Time Traffic Signal System using FreeRTOS* — Published on [IEEE Xplore (Direct Link)](https://ieeexplore.ieee.org/document/11135576).
+- **Engineering Project Reports:** Each featured project includes its complete technical design report co-located directly within its repository folder:
+  - [Project 01: FreeRTOS Real-Time Controller Report](./01-FreeRTOS-RTTCS/Project_Report.pdf)
+  - [Project 02: SPI Master-Slave Bus Protocol Report](./02-SPI-Master-Slave-Protocol/Project_Report.pdf)
+  - [Project 03: Embedded C++ Hardware Abstraction Report](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf)
+  - [Project 04: 8-Bit ALU FPGA Verification Report](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf)
+  - [Project 05: E2W BLDC Motor Controller & Telematics Report](./05-BLDC-Motor-Controller-E2W-IoT/Project_Report.pdf)
 
 ---
 
-## Certifications & Credentials
+## Verified Certifications & Credentials
 
-Verified certificates are archived in the [**`certificates/`**](./certificates/) directory:
-
-- [**Problem Solving through Programming in C (NPTEL - IIT Kharagpur, Score: 83%)**](./certificates/Problem%20Solving%20through%20Programming%20in%20C.jpg)
-- [**IoT & Embedded Systems Technical Certification**](./certificates/IOT_Webinar.jpg)
-- [**Virtual Summer School on Recent Embedded Trends**](./certificates/Virtual%20Summer%20School%20on%20Recent%20Trends.pdf)
+- [**Problem Solving through Programming in C — NPTEL (IIT Kharagpur)**](./certificates/Problem%20Solving%20through%20Programming%20in%20C.jpg)  
+  *Score: 83% (Elite)* — Rigorous proctored certification covering low-level C programming, pointer arithmetic, memory layout, and data structures. Complete credential details can be viewed in the [certificates directory](./certificates/).
 
 ---
 
