@@ -60,9 +60,9 @@ flowchart LR
 
 ---
 
-## Firmware Perspective
+## Firmware Architecture & Low-Level Design
 
-From an embedded systems and real-time firmware engineering perspective:
+From a firmware architecture and real-time systems design standpoint:
 
 - **SRAM Stack Allocation & Budgeting:**
   - The target ATmega2560 provides 8 KB of SRAM. To prevent stack overflow and collisions with static BSS variables, task stack sizes are strictly constrained: 150 words allocated to `MasterTask` and 100 words to each of the 4 lane actuation tasks.

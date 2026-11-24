@@ -45,9 +45,9 @@ The physical system was connected on a breadboard using an ST-Link V2 debugger a
 
 ---
 
-## Firmware Perspective
+## Firmware Architecture & Low-Level Design
 
-From a low-level firmware engineering standpoint, this design focuses on register-level peripheral control, deterministic interrupt handling, and safe signal management across mixed-voltage domains:
+From a low-level peripheral driver and firmware architecture standpoint:
 
 - **Register-Level Peripheral Control:**
   - **STM32 (Master):** Configures `SPI_CR1` (Clock polarity `CPOL=0`, phase `CPHA=0`, baud prescaler `BR[2:0]=010` for `/8`, master mode `MSTR=1`), and enables hardware slave select output via `SSOE=1` in `SPI_CR2`.
