@@ -66,15 +66,6 @@ From a low-level peripheral driver and firmware architecture standpoint:
 
 ---
 
-## Key Engineering Competencies Demonstrated
-
-- **Heterogeneous Architecture Interfacing:** Bridged 32-bit ARM Cortex-M and 8-bit AVR microcontrollers across mixed voltage levels (3.3V / 5V).
-- **Bus Timing & Prescaling:** Derived 1 MHz SCLK from 8 MHz core clock via hardware prescaler configuration while respecting SPI Mode 0 setup and hold constraints.
-- **Robust Framing Protocol:** Implemented length-prefixed framing to eliminate buffer overrun hazards without software polling overhead.
-- **Hardware-in-the-Loop Validation:** Verified transmission end-to-end using dedicated hardware debuggers (ST-Link V2) and real-time serial telemetry.
-
----
-
 ## Technical Documentation
 
 - [Project_Report.pdf](./Project_Report.pdf): Engineering presentation and hardware architecture documentation.

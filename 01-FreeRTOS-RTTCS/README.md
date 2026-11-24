@@ -52,12 +52,6 @@ flowchart LR
     Reset --> Master
 ```
 
-### Key Execution Mechanics
-
-- **Dynamic Priority Allocation (`vTaskPrioritySet`)**: Sensor pairs (High & Low) detect lane density. High-density lanes receive elevated priority and extended green time (**7 ticks vs. 5 ticks**).
-- **Cooperative Task Handoff**: Non-preemptive model (`configUSE_PREEMPTION = 0`). Active lane task executes its countdown, then suspends itself (`vTaskSuspend`), yielding CPU to the next highest-priority lane.
-- **Cycle Synchronization**: Once the lowest-priority lane (`uxTaskPriorityGet() == 0`) finishes, it calls `vTaskResume(MasterTaskHandle)` and `taskYIELD()`, allowing `MasterTask` to take over, read fresh IR inputs, and restart the cycle.
-
 ---
 
 ## Firmware Architecture & Low-Level Design
