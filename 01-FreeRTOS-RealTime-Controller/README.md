@@ -10,7 +10,8 @@
 > **Course:** 6EC191 Minor Project Report, Department of Electronics & Communication Engineering, Nirma University.  
 > **Author:** Divyani Patel (23MRE005)  
 > **Direct IEEE Link:** [https://ieeexplore.ieee.org/document/11135576](https://ieeexplore.ieee.org/document/11135576)  
-> **Full PDF Report:** [View Technical Report (Project_Report.pdf)](./Project_Report.pdf)
+> **Full PDF Report:** [View Technical Report (Project_Report.pdf)](./Project_Report.pdf)  
+> **Task Execution Flowchart:** [Jump to Flowchart Diagram](#system-execution-flowchart)
 
 ---
 
@@ -38,6 +39,7 @@ The system dynamically detects vehicle density across 4 lanes using high/low IR 
 
 ## ⚙️ FreeRTOS Task Structure & Priority Allocation
 
+<a id="system-execution-flowchart"></a>
 ### 📊 System Execution Flowchart
 
 ```mermaid

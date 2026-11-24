@@ -14,7 +14,7 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 | # | Project | Key Domains | Core Highlights |
 |---|---|---|---|
-| **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RealTime-Controller/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. |
+| **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RealTime-Controller/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. <br/>• [📊 View Execution Flowchart](./01-FreeRTOS-RealTime-Controller/#system-execution-flowchart) • [📄 Project Report](./01-FreeRTOS-RealTime-Controller/Project_Report.pdf) |
 | **02** | [**STM32 Bare-Metal Hardware Drivers**](./02-STM32-BareMetal-Firmware/) | Bare-Metal C, ARM Cortex-M | Direct register-level programming (`-nostdlib`) on STM32F103 (Blue Pill). Features custom startup vector table, SysTick low-power WFI sleep, Full-Duplex SPI, lock-free Ring Buffer, and **Circular DMA Ping-Pong streaming**. |
 | **03** | [**Firmware Test Automation & KPI Suite**](./03-Firmware-Test-Automation/) | Python, CI/CD, Verification | Automated hardware-in-the-loop (HIL) test harness and KPI regression framework. Generates real-time HTML test execution dashboards and latency metrics. |
 
@@ -24,6 +24,7 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 ### 1. [FreeRTOS Real-Time Controller (IEEE Publication)](./01-FreeRTOS-RealTime-Controller/)
 - **Publication:** *Intelligent Real-Time Traffic Signal System using FreeRTOS* ([IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
+- **Flowchart Diagram:** [View Task Execution Flowchart](./01-FreeRTOS-RealTime-Controller/#system-execution-flowchart)
 - **Key Achievements:**
   - Implemented dynamic runtime priority reassignment (`vTaskPrioritySet()`) based on IR sensor density detection across 4 lanes.
   - Designed cooperative priority handoff architecture using `vTaskSuspend()` and `vTaskResume()` cycle synchronization.
