@@ -40,85 +40,24 @@ The system dynamically detects vehicle density across 4 lanes using high/low IR 
 ## ⚙️ FreeRTOS Task Structure & Priority Allocation
 
 <a id="system-execution-flowchart"></a>
-### 📊 System Execution Flowchart
+### 📊 Dynamic Scheduling Flow
 
 ```mermaid
-flowchart TD
-    Start(["System Boot / setup()"]) --> InitTasks["Initialize GPIO & Allocate Tasks<br/>- MasterTask (Priority 4)<br/>- Lane 1-4 Tasks (Priorities 3, 2, 1, 0)"]
-    InitTasks --> Scheduler["FreeRTOS Scheduler Starts"]
-    
-    subgraph MasterPhase ["Phase 1: Density Evaluation & Priority Shifting"]
-        Scheduler --> MasterRun["MasterTask Dispatched (Priority 4)"]
-        MasterRun --> ReadIR["Sample 8 IR Sensors (H1..H4, L1..L4)"]
-        ReadIR --> EvalDensity{"Check Density<br/>(High & Low Sensors Active?)"}
-        EvalDensity -- Yes --> HighDensity["High Density Lane<br/>Delay = 7 ticks<br/>Priority: High Tier (descending from 3)"]
-        EvalDensity -- No --> NormDensity["Normal Density Lane<br/>Delay = 5 ticks<br/>Priority: Base Tier (ascending from 0)"]
-        HighDensity --> SetPri["Apply vTaskPrioritySet() for Lanes 1 to 4"]
-        NormDensity --> SetPri
-        SetPri --> SuspendMaster["MasterTask Calls vTaskSuspend()"]
-    end
-
-    subgraph LanePhase ["Phase 2: Priority-Ordered Lane Execution"]
-        SuspendMaster --> ExecLane["Scheduler Runs Highest-Priority Lane Task"]
-        ExecLane --> Green["Active Lane: Green LED ON<br/>Other Lanes: Red LED ON"]
-        Green --> Countdown["7-Segment Countdown (7 ticks or 5 ticks)"]
-        Countdown --> Yellow["Transition: Yellow LED ON (2 ticks)"]
-        Yellow --> CheckPriority{"Is uxTaskPriorityGet() == 0?<br/>(Lowest Priority Lane?)"}
-        
-        CheckPriority -- "No (More Lanes Pending)" --> SuspendLane["Current Lane Calls vTaskSuspend()<br/>Yield CPU to Next Highest-Priority Lane"]
-        SuspendLane --> ExecLane
-        
-        CheckPriority -- "Yes (Cycle Complete)" --> ResumeAll["Resume All 4 Lane Tasks<br/>Call vTaskResume(MasterTaskHandle)<br/>Call taskYIELD()"]
-    end
-
-    ResumeAll --> MasterRun
+flowchart LR
+    Master["<b>1. MasterTask (Priority 4)</b><br/>Samples 8 IR sensors across lanes"] --> SetPri["<b>2. vTaskPrioritySet()</b><br/>High density: 7s | Normal: 5s"]
+    SetPri --> LaneExec["<b>3. Lane Task Execution</b><br/>Green/Yellow LEDs & Countdown"]
+    LaneExec --> Check{"Pending<br/>Lanes?"}
+    Check -- Yes --> NextLane["Suspend current lane<br/>Dispatch next priority lane"]
+    NextLane --> LaneExec
+    Check -- No --> Reset["Resume all lanes &<br/>wake MasterTask"]
+    Reset --> Master
 ```
 
----
+### 🎯 Key Execution Mechanics
 
-### 📋 Step-by-Step Architecture & Execution Flow
-
-1. **Step 1: System Boot & Task Creation (`setup()`)**
-   - Configures 8 IR digital inputs (`Sensor1_1` through `Sensor4_2`) and 12 traffic LEDs (`R1..R4`, `Y1..Y4`, `G1..G4`).
-   - Configures 7 output pins for the 7-segment countdown display.
-   - Spawns 5 FreeRTOS tasks:
-     - `MasterTask_Sensor` (Priority: 4, Stack: 150 words)
-     - `taskLane1` to `taskLane4` (Initial Priorities: 3, 2, 1, 0, Stack: 100 words each).
-   - Configured with non-preemptive cooperative scheduling (`configUSE_PREEMPTION = 0`).
-
-2. **Step 2: Real-Time IR Sensing & Dynamic Priority Sorting (`MasterTask`)**
-   - `MasterTask` samples the High (`H`) and Low (`L`) IR sensors for all 4 lanes simultaneously.
-   - Evaluates boolean density: `local_Assignment[lane] = (H & L)`.
-   - **High Density (`H=1, L=1`):** Vehicles queued across both sensors.
-     - Green interval set to **7 ticks** (`Delay_Tick_Array[k] = 7`).
-     - Priority assigned from highest available tier (e.g., Priority 3, 2).
-   - **Normal Density:**
-     - Green interval set to **5 ticks** (`Delay_Tick_Array[k] = 5`).
-     - Priority assigned from lower tier (e.g., Priority 0, 1).
-   - Calls `vTaskPrioritySet()` in real time for `taskLane1Handle` through `taskLane4Handle`.
-   - `MasterTask` calls `vTaskSuspend(MasterTaskHandle)` to yield CPU control.
-
-3. **Step 3: Sequential Priority-Driven Lane Execution**
-   - The FreeRTOS scheduler selects the ready task with the highest priority.
-   - Actuates **Green LED** on the current lane while keeping **Red LEDs** on all other three lanes.
-   - Counts down green signal ticks (7s or 5s) on the 7-segment display using `xTaskGetTickCount()`.
-   - Transitions to **Yellow LED** for 2 ticks before closing the lane.
-
-4. **Step 4: Non-Preemptive Handoff (`uxTaskPriorityGet() > 0`)**
-   - Upon completing yellow warning, the lane checks its own priority:
-     ```c
-     check = uxTaskPriorityGet(taskLaneHandle);
-     ```
-   - If `check != 0` (other lower-priority lanes are still waiting to run):
-     - Calls `vTaskSuspend(taskLaneHandle)`.
-     - Scheduler automatically hands CPU control to the next highest priority ready lane.
-
-5. **Step 5: Cycle Wrap & Next Epoch Trigger (`uxTaskPriorityGet() == 0`)**
-   - When the lowest priority task (`check == 0`) completes its cycle:
-     - It awakens all 4 lane tasks: `vTaskResume(taskLane1Handle)...vTaskResume(taskLane4Handle)`.
-     - Awakens Master Task: `vTaskResume(MasterTaskHandle)`.
-     - Calls `taskYIELD()` to hand control back to `MasterTask`.
-   - `MasterTask` (Priority 4) immediately preempts/runs, reads fresh sensor data, recalculates priorities, and starts the next adaptive cycle.
+- **Dynamic Priority Allocation (`vTaskPrioritySet`)**: Sensor pairs (High & Low) detect lane density. High-density lanes receive elevated priority and extended green time (**7 ticks vs. 5 ticks**).
+- **Cooperative Task Handoff**: Non-preemptive model (`configUSE_PREEMPTION = 0`). Active lane task executes its countdown, then suspends itself (`vTaskSuspend`), yielding CPU to the next highest-priority lane.
+- **Cycle Synchronization**: Once the lowest-priority lane (`uxTaskPriorityGet() == 0`) finishes, it calls `vTaskResume(MasterTaskHandle)` and `taskYIELD()`, allowing `MasterTask` to take over, read fresh IR inputs, and restart the cycle.
 
 ---
 
