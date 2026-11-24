@@ -16,10 +16,39 @@ By applying data encapsulation and abstraction directly over memory-mapped hardw
 
 ## Class Architecture & Hardware Model
 
-![Class Diagram](./class_diagram.png)
+### Step 1: Type Definitions & State Modeling
 
-- **Data Encapsulation:** Hardware pin state and configuration masks are maintained as private class members (`color`, `state`), preventing direct external tampering.
-- **Unified Public Interface:** The application interacts solely through strict public methods (`Led_SetState`), ensuring type-safe peripheral operation.
+```cpp
+typedef enum {
+    RED = 0,
+    GREEN,
+    BLUE
+} LedColor_type;
+
+typedef enum {
+    OFF = 0,
+    ON = 1
+} LedState_type;
+```
+
+### Step 2: Class Definition & Member Encapsulation
+
+```cpp
+class Led {
+private:
+    LedColor_type color;  // Encapsulated hardware pin identifier
+    LedState_type state;  // Current logical state
+
+public:
+    Led(LedColor_type _color);                // Constructor: bus clock gating & direction setup
+    void Led_SetState(LedState_type _state);  // Public interface: register-level state actuation
+};
+```
+
+### Step 3: Lifecycle & Operational Flow
+
+1. **Instantiation (`Led led(RED)`):** The constructor configures the peripheral bus clock in `RCC_APB2ENR` and initializes `GPIOC_CRH` direction registers.
+2. **State Control (`led.Led_SetState(ON)`):** Public method modifies `GPIOC_ODR` bits directly, guaranteeing that the application cannot write invalid state to unrelated hardware pins.
 
 ---
 
