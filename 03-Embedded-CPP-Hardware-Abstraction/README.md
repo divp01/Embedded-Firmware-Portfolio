@@ -16,39 +16,18 @@ By applying data encapsulation and abstraction directly over memory-mapped hardw
 
 ## Class Architecture & Hardware Model
 
-### Step 1: Type Definitions & State Modeling
+The driver models physical hardware components through a structured three-tier object-oriented architecture:
 
-```cpp
-typedef enum {
-    RED = 0,
-    GREEN,
-    BLUE
-} LedColor_type;
+- **Hardware Identity & State Modeling:**
+  - Utilizes strongly-typed enumerations for hardware channel mapping and operational state (ON/OFF), ensuring type safety and preventing invalid configurations at compile time.
 
-typedef enum {
-    OFF = 0,
-    ON = 1
-} LedState_type;
-```
+- **Data Encapsulation & Hardware Hiding:**
+  - **Private Attributes:** Physical pin mappings and internal device states are strictly private, preventing higher application layers from directly altering low-level peripheral state.
+  - **Public Interface:** Restricts caller access to well-defined methods (constructor for initialization, dedicated setter for actuation), creating a robust hardware abstraction layer (HAL) boundary.
 
-### Step 2: Class Definition & Member Encapsulation
-
-```cpp
-class Led {
-private:
-    LedColor_type color;  // Encapsulated hardware pin identifier
-    LedState_type state;  // Current logical state
-
-public:
-    Led(LedColor_type _color);                // Constructor: bus clock gating & direction setup
-    void Led_SetState(LedState_type _state);  // Public interface: register-level state actuation
-};
-```
-
-### Step 3: Lifecycle & Operational Flow
-
-1. **Instantiation (`Led led(RED)`):** The constructor configures the peripheral bus clock in `RCC_APB2ENR` and initializes `GPIOC_CRH` direction registers.
-2. **State Control (`led.Led_SetState(ON)`):** Public method modifies `GPIOC_ODR` bits directly, guaranteeing that the application cannot write invalid state to unrelated hardware pins.
+- **Deterministic Operational Flow:**
+  1. **Automated Initialization via Constructor:** Instantiating a peripheral object automatically gates the peripheral clock in `RCC_APB2ENR` and configures output direction in `GPIOC_CRH`, guaranteeing the hardware is initialized prior to use.
+  2. **Safe Runtime Actuation:** State transitions perform bitwise atomic writes directly to output data registers (`GPIOC_ODR`), isolating neighboring pin states and avoiding read-modify-write hazards.
 
 ---
 
