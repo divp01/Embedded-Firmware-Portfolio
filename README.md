@@ -51,7 +51,7 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
 
-- 📄 [**IEEE Research Paper (RTITCS)**](./reports/23MRE005_RTITCS_Paper.pdf) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* ([IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
+- 🔗 [**IEEE Research Paper (RTITCS)**](https://ieeexplore.ieee.org/document/11135576) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* (Published on [IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
 - 📄 [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
 - 📄 [**Minor Project Technical Report**](./reports/23MRE005_MINOR_PROJECT_REPORT.pdf) — Real-time embedded system architecture and firmware design.
 - 📄 [**SPI Protocol & Design (PnD) Report**](./reports/PnD_SPI.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.

@@ -8,7 +8,7 @@ This directory contains full academic, engineering, and research project reports
 
 | Document | Category | Domain & Description | Direct View Link |
 |---|---|---|---|
-| **IEEE Research Paper (RTITCS)** | Research Publication | *Intelligent Real-Time Traffic Signal System using FreeRTOS* | [**23MRE005_RTITCS_Paper.pdf**](./23MRE005_RTITCS_Paper.pdf) |
+| **IEEE Research Paper (RTITCS)** | Research Publication | *Intelligent Real-Time Traffic Signal System using FreeRTOS* | [**IEEE Xplore (Direct Link)**](https://ieeexplore.ieee.org/document/11135576) |
 | **Major Project Report** | Capstone Engineering | Comprehensive Major Engineering Project Report | [**19BEE032_MAJOR_PROJECT.pdf**](./19BEE032_MAJOR%20PROJECT.pdf) |
 | **Minor Project Report** | Embedded Systems | Microcontroller interfacing, real-time control, firmware design | [**23MRE005_MINOR_PROJECT_REPORT.pdf**](./23MRE005_MINOR_PROJECT_REPORT.pdf) |
 | **SPI Protocol & Design (PnD)** | Comm Protocols | Physical design and protocol verification of SPI bus interfacing | [**PnD_SPI.pdf**](./PnD_SPI.pdf) |
