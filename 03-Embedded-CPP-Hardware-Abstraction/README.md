@@ -16,17 +16,9 @@ By applying data encapsulation and abstraction directly over memory-mapped hardw
 
 ## Class Architecture & Hardware Model
 
-```mermaid
-classDiagram
-    class Led {
-        -LedColor_type color
-        -LedState_type state
-        +Led(LedColor_type _color)
-        +Led_SetState(LedState_type _state) void
-    }
-```
+![Class Diagram](./class_diagram.png)
 
-- **Data Encapsulation:** Hardware pin state and configuration masks are maintained as private class members, preventing direct external tampering.
+- **Data Encapsulation:** Hardware pin state and configuration masks are maintained as private class members (`color`, `state`), preventing direct external tampering.
 - **Unified Public Interface:** The application interacts solely through strict public methods (`Led_SetState`), ensuring type-safe peripheral operation.
 
 ---
