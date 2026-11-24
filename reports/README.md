@@ -12,7 +12,6 @@ This directory contains full academic, engineering, and research project reports
 | **Major Project Report** | Capstone Engineering | Comprehensive Major Engineering Project Report | [**19BEE032_MAJOR_PROJECT.pdf**](./19BEE032_MAJOR%20PROJECT.pdf) |
 | **Minor Project Report** | Embedded Systems | Microcontroller interfacing, real-time control, firmware design | [**Project_Report.pdf**](../01-FreeRTOS-RTTCS/Project_Report.pdf) |
 | **SPI Bus Protocol Implementation** | Comm Protocols | STM32 to Arduino SPI bus communication via logic level shifter | [**Project_Report.pdf**](../02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
-| **Advanced Digital Design: ALU** | Silicon / VLSI | Arithmetic Logic Unit (ALU) architecture, RTL design, and verification | [**ADSD_ALU.pdf**](./ADSD_ALU.pdf) |
 | **8-Bit ALU FPGA Verification** | Digital Logic / FPGA | RTL design and Hardware-in-the-Loop verification on Cyclone II | [**Project_Report.pdf**](../04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) |
 | **Embedded C++ Hardware Abstraction** | Embedded Architecture | Object-oriented peripheral abstraction and driver on STM32 | [**Project_Report.pdf**](../03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) |
 | **Digital Verification & Timing** | VLSI Verification | Hardware simulation waveforms, timing analysis, and verification | [**23MRE005_TUT5_Pnd.pdf**](./23MRE005_TUT5_Pnd.pdf) |

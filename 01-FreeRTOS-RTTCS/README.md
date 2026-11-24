@@ -87,3 +87,4 @@ The system was physically probed and validated using the **Digilent Analog Disco
 
 - [src/Traffic_Controller_4Lane.ino](./src/Traffic_Controller_4Lane.ino): Complete, verified 4-lane adaptive traffic signal firmware.
 - [Project_Report.pdf](./Project_Report.pdf): Complete 41-page engineering project architecture and validation report.
+- [Project_Presentation.pptx](./Project_Presentation.pptx): Project defense presentation slide deck.

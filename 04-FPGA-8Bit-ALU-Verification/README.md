@@ -62,3 +62,4 @@ The physical FPGA implementation was verified on a hardware bench using dual Dig
 ## Technical Documentation
 
 - [Project_Report.pdf](./Project_Report.pdf): Engineering design report detailing RTL schematics, pin planning, and hardware logic analyzer waveforms.
+- [Project_Presentation.pdf](./Project_Presentation.pdf): Project presentation slides and architecture review deck.

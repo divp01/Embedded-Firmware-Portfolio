@@ -17,6 +17,7 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 | **02** | [**SPI Master-Slave Bus Protocol**](./02-SPI-Master-Slave-Protocol/) | Bus Protocols, Interfacing | STM32F103 (Master) to Arduino Uno (Slave) SPI communication via 4-channel logic level shifter. Features length-prefixed frame protocol, 1 MHz clocking, and hardware verification. <br/>• [Project Report](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
 | **03** | [**Embedded C++ Hardware Abstraction**](./03-Embedded-CPP-Hardware-Abstraction/) | Embedded C++, ARM Cortex-M | Bare-metal object-oriented peripheral driver on STM32F103. Features hardware encapsulation, direct register bitmasking, and zero-overhead C++ abstractions. <br/>• [Project Report](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) |
 | **04** | [**8-Bit ALU & FPGA Verification**](./04-FPGA-8Bit-ALU-Verification/) | Verilog HDL, FPGA, HIL Testing | Synthesizable 8-bit ALU on Altera Cyclone II FPGA. Validated via closed-loop Hardware-in-the-Loop testbench with dual Analog Discovery 2 instruments. <br/>• [Project Report](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) |
+| **05** | [**Intel Server UEFI Platform Firmware**](./05-UEFI-Platform-Firmware-EDK2/) | UEFI / BIOS, x86_64, EDK II | Platform firmware initialization for Intel Servers using TianoCore EDK II. Features PEIM-to-PEIM Interface (PPI) communication, Cache-as-RAM, and boot flow architecture. <br/>• [Project Presentation](./05-UEFI-Platform-Firmware-EDK2/Project_Presentation.pptx) |
 
 ---
 
@@ -64,6 +65,16 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 
 ---
 
+### 5. [Intel Server UEFI Platform Firmware](./05-UEFI-Platform-Firmware-EDK2/)
+- **Focus Domains:** UEFI PI Boot Phases (SEC, PEI, DXE, BDS), x86_64 Architecture, TianoCore EDK II.
+- **Target Architecture:** Intel Server Platforms / x86_64.
+- **Key Achievements:**
+  - Developed modular Pre-EFI Initialization Modules (PEIMs) communicating through unique GUID-based PEIM-to-PEIM Interfaces (PPI).
+  - Configured Cache-as-RAM (CAR) pre-memory execution environment and EDK II package build rules (`.inf`, `.dec`, `.dsc`).
+  - Analyzed handoff block (HOB) propagation and platform transitions from reset vector to DXE phase.
+
+---
+
 ## Project Reports & Technical Documentation
 
 All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
@@ -73,19 +84,9 @@ All major engineering reports, IEEE research papers, and technical project docum
 - [**Minor Project Technical Report**](./01-FreeRTOS-RTTCS/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
 - [**SPI Bus Protocol Implementation Report**](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
 - [**Embedded C++ Hardware Abstraction Report**](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) — Object-oriented hardware abstraction and peripheral driver implementation on STM32.
-- [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.
 - [**8-Bit ALU FPGA Verification Report**](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) — RTL design, FPGA synthesis, and Hardware-in-the-Loop logic analyzer verification.
 - [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Hardware timing constraints and simulation waveforms.
 - [**M.Tech Embedded Systems Thesis**](./reports/Nirma_ES_23MRE005_Divyani_Patel.pdf) — Nirma University Embedded Systems Engineering Master's Thesis.
-
----
-
-## Project Presentations & Review Slides
-
-Official engineering presentation decks are available in the [**`presentations/`**](./presentations/) directory:
-
-- [**Major Project Review 1 Presentation**](./presentations/23MRE005_Major_Project_Review-1.pptx) — Architecture, block diagrams, and milestone review.
-- [**Minor Project Final Review Presentation**](./presentations/23MRE005_Minor_Final.pptx) — Real-time control system final defense slides.
 
 ---
 
