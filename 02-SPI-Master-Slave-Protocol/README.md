@@ -45,6 +45,27 @@ The physical system was connected on a breadboard using an ST-Link V2 debugger a
 
 ---
 
+## Firmware Perspective
+
+From a low-level firmware engineering standpoint, this design focuses on register-level peripheral control, deterministic interrupt handling, and safe signal management across mixed-voltage domains:
+
+- **Register-Level Peripheral Control:**
+  - **STM32 (Master):** Configures `SPI_CR1` (Clock polarity `CPOL=0`, phase `CPHA=0`, baud prescaler `BR[2:0]=010` for `/8`, master mode `MSTR=1`), and enables hardware slave select output via `SSOE=1` in `SPI_CR2`.
+  - **AVR (Slave):** Enables the SPI peripheral and interrupt generation directly via the `SPCR` control register (`SPE=1`, `SPIE=1`), setting MISO as output while maintaining SCK, MOSI, and SS in high-impedance input mode.
+
+- **Interrupt-Driven Reception & Low Latency:**
+  - Slave reception is handled asynchronously by the `SPI_STC_vect` (Serial Transfer Complete) interrupt handler.
+  - The ISR reads data register `SPDR` in a single instruction cycle, preventing Hardware Overrun (`OVR`) conditions without stalling the main processor thread.
+
+- **Bus Timing & Voltage Translation Constraints:**
+  - Interfacing 3.3V LVCMOS to 5V TTL requires active logic level shifting. SCLK is held at 1 MHz (1 us period) to accommodate the propagation delay (~15 ns) and capacitive load ($C_L$) across the bidirectional MOSFET level shifter channels.
+  - Hardware NSS assertion automatically frames the transaction; deassertion triggers frame processing without needing external handshaking pins.
+
+- **Defensive Framing & Memory Safety:**
+  - Length-prefixed dynamic framing ensures the receiving slave validates message bounds (`pos < sizeof(dataBuff) - 1`) prior to buffer indexing, preventing memory corruption or stack smashes from partial or noisy bus transactions.
+
+---
+
 ## Key Engineering Competencies Demonstrated
 
 - **Heterogeneous Architecture Interfacing:** Bridged 32-bit ARM Cortex-M and 8-bit AVR microcontrollers across mixed voltage levels (3.3V / 5V).

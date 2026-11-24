@@ -60,6 +60,26 @@ flowchart LR
 
 ---
 
+## Firmware Perspective
+
+From an embedded systems and real-time firmware engineering perspective:
+
+- **SRAM Stack Allocation & Budgeting:**
+  - The target ATmega2560 provides 8 KB of SRAM. To prevent stack overflow and collisions with static BSS variables, task stack sizes are strictly constrained: 150 words allocated to `MasterTask` and 100 words to each of the 4 lane actuation tasks.
+  - Total kernel task footprint remains under 1.5 KB, preserving memory bandwidth and ensuring zero out-of-memory kernel panics.
+
+- **Deterministic Cooperative Scheduling (`configUSE_PREEMPTION = 0`):**
+  - Non-preemptive scheduling eliminates race conditions on shared GPIO port registers (`PORTA`, `PORTC`) and display drivers without requiring priority inheritance mutexes or critical sections.
+  - Context switches occur deterministically at explicit yield points (`vTaskSuspend` and `taskYIELD`), ensuring jitter-free countdown timing.
+
+- **Runtime Dynamic Priority Mutation:**
+  - Leverages FreeRTOS `vTaskPrioritySet()` directly within `MasterTask` to dynamically re-order scheduler ready queues in real-time based on debounced IR sensor digital reads.
+
+- **Hardware-Synchronized Non-Blocking Timekeeping:**
+  - Uses FreeRTOS tick counters (`xTaskGetTickCount()`) for 1-second interval delta comparisons, maintaining synchronization with the hardware timer interrupt without CPU busy-wait spinlocks.
+
+---
+
 ## Experimental Validation (Analog Discovery 2)
 
 The system was physically probed and validated using the **Digilent Analog Discovery 2 USB Logic Analyzer**:
