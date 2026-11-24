@@ -17,6 +17,7 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 | **02** | [**SPI Master-Slave Bus Protocol**](./02-SPI-Master-Slave-Protocol/) | Bus Protocols, Interfacing | STM32F103 (Master) to Arduino Uno (Slave) SPI communication via 4-channel logic level shifter. Features length-prefixed frame protocol, 1 MHz clocking, and hardware verification. <br/>• [Project Report](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) |
 | **03** | [**Embedded C++ Hardware Abstraction**](./03-Embedded-CPP-Hardware-Abstraction/) | Embedded C++, ARM Cortex-M | Bare-metal object-oriented peripheral driver on STM32F103. Features hardware encapsulation, direct register bitmasking, and zero-overhead C++ abstractions. <br/>• [Project Report](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) |
 | **04** | [**8-Bit ALU & FPGA Verification**](./04-FPGA-8Bit-ALU-Verification/) | Verilog HDL, FPGA, HIL Testing | Synthesizable 8-bit ALU on Altera Cyclone II FPGA. Validated via closed-loop Hardware-in-the-Loop testbench with dual Analog Discovery 2 instruments. <br/>• [Project Report](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) |
+| **05** | [**E2W BLDC Motor Controller & Telematics**](./05-BLDC-Motor-Controller-E2W-IoT/) | Motor Control (FOC), IoT Telematics | STM32G431RB Field-Oriented Control (FOC) BLDC motor driver with ESP32 cellular GPS tracking and dual-mode secure battery swapping lock. <br/>• [View Architecture Diagram](./05-BLDC-Motor-Controller-E2W-IoT/#system-architecture) • [Project Report](./05-BLDC-Motor-Controller-E2W-IoT/Project_Report.pdf) |
 
 ---
 
@@ -64,18 +65,28 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 
 ---
 
+### 5. [E2W BLDC Motor Controller & IoT Telematics](./05-BLDC-Motor-Controller-E2W-IoT/)
+- **Focus Domains:** Motor Control, Field-Oriented Control (FOC), Inverter Gate Driving, Cellular Telematics, Embedded Security.
+- **Target Hardware:** STM32G431RB (ARM Cortex-M4 @ 170 MHz), X-NUCLEO-IHM16M1 (3-Phase Driver), ESP32, GSM SIM800L, GPS NEO-6M.
+- **Key Achievements:**
+  - Implemented Field-Oriented Control (FOC) vector control using Clarke/Park transformations, decoupled $I_d$/$I_q$ PI regulation, and Space Vector PWM (SVPWM).
+  - Architected hybrid commutation utilizing Hall sensors for zero-speed/high-torque startup and Back-EMF (BEMF) state observer for high-speed sensorless operation.
+  - Engineered dual-mode telematics unit featuring cellular cloud synchronization (GPRS/HTTP) with captive Wi-Fi fallback and dynamic OTP authentication for battery swapping security.
+  - Validated on bench setup using STM32 Motor Control Workbench and successfully integrated into an electric two-wheeler prototype.
+
+---
+
 ## Project Reports & Technical Documentation
 
 All major engineering reports, IEEE research papers, and technical project documentations are organized in the [**`reports/`**](./reports/) directory:
 
 - [**IEEE Research Paper (RTITCS)**](https://ieeexplore.ieee.org/document/11135576) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* (Published on [IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
-- [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
+- [**E2W BLDC Motor Controller & IoT Telematics Report**](./05-BLDC-Motor-Controller-E2W-IoT/Project_Report.pdf) — Comprehensive design and vehicle validation report of FOC motor driver and telematics locking system.
 - [**Minor Project Technical Report**](./01-FreeRTOS-RTTCS/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
 - [**SPI Bus Protocol Implementation Report**](./02-SPI-Master-Slave-Protocol/Project_Report.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
 - [**Embedded C++ Hardware Abstraction Report**](./03-Embedded-CPP-Hardware-Abstraction/Project_Report.pdf) — Object-oriented hardware abstraction and peripheral driver implementation on STM32.
 - [**8-Bit ALU FPGA Verification Report**](./04-FPGA-8Bit-ALU-Verification/Project_Report.pdf) — RTL design, FPGA synthesis, and Hardware-in-the-Loop logic analyzer verification.
 - [**Digital Design Verification Report**](./reports/23MRE005_TUT5_Pnd.pdf) — Hardware timing constraints and simulation waveforms.
-- [**M.Tech Embedded Systems Thesis**](./reports/Nirma_ES_23MRE005_Divyani_Patel.pdf) — Nirma University Embedded Systems Engineering Master's Thesis.
 
 ---
 
@@ -92,8 +103,9 @@ Verified certificates are archived in the [**`certificates/`**](./certificates/)
 ## Core Technical Skills Matrix
 
 - **Programming Languages:** Embedded C (C99/C11, volatile pointers, bitwise operations, memory layout), Embedded C++, Python (Automation, Test Scripting), Verilog HDL.
-- **Architectures:** ARM Cortex-M3/M4 (STM32, Blue Pill), AVR (ATmega2560), Altera / Intel FPGA (Cyclone II).
-- **RTOS & Systems:** FreeRTOS (Tasks, Queues, Semaphores, Mutexes, Event Groups), Bare-Metal Hardware Bring-up, Memory-Mapped Register Programming.
-- **Communication Protocols:** SPI, UART, I2C, GPIO alternate functions, cross-voltage logic interfacing.
+- **Architectures:** ARM Cortex-M4/M3 (STM32G431, STM32F103), Xtensa Dual-Core (ESP32), AVR (ATmega2560), Altera / Intel FPGA (Cyclone II).
+- **Motor Control & Power:** Field-Oriented Control (FOC), Space Vector PWM (SVPWM), Clarke/Park Transforms, Back-EMF Observers, 3-Phase Inverter Driving.
+- **RTOS & Systems:** FreeRTOS (Tasks, Queues, Semaphores, Mutexes, Event Groups), Bare-Metal Hardware Bring-up, Direct Register Manipulation.
+- **Communication Protocols:** SPI, UART, I2C, Cellular AT Commands (GSM/GPRS SIM800L), GPS NMEA Protocol, GPIO alternate functions.
 - **Lab & Debug Equipment:** Digilent Analog Discovery 2 (Logic Analyzer & Pattern Generator), Digital Storage Oscilloscope (DSO), JTAG / SWD (ST-Link V2, Keil uVision, OpenOCD, GDB).
-- **Tools & Build Systems:** GNU Arm Embedded Toolchain (`arm-none-eabi-gcc`), Keil MDK-ARM v5, Quartus II, Git, Makefiles.
+- **Tools & Build Systems:** STM32CubeIDE, STM32 Motor Control Workbench, Motor Profiler, GNU Arm Embedded Toolchain (`arm-none-eabi-gcc`), Keil MDK-ARM v5, Quartus II, Git.
