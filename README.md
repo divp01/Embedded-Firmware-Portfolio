@@ -14,7 +14,7 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 | # | Project | Key Domains | Core Highlights |
 |---|---|---|---|
-| **01** | [**FreeRTOS Real-Time Traffic Controller**](./01-FreeRTOS-RealTime-Controller/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. <br/>• [View Execution Flowchart](./01-FreeRTOS-RealTime-Controller/#system-execution-flowchart) • [Project Report](./01-FreeRTOS-RealTime-Controller/Project_Report.pdf) |
+| **01** | [**FreeRTOS - RTTCS**](./01-FreeRTOS-RTTCS/) | Real-Time OS, Multitasking | **IEEE Xplore Published.** Multi-lane FreeRTOS firmware featuring dynamic priority shifting (`vTaskPrioritySet`), density-driven green intervals, and cooperative task scheduling on ATmega2560. <br/>• [View Execution Flowchart](./01-FreeRTOS-RTTCS/#system-execution-flowchart) • [Project Report](./01-FreeRTOS-RTTCS/Project_Report.pdf) |
 | **02** | [**STM32 Bare-Metal Hardware Drivers**](./02-STM32-BareMetal-Firmware/) | Bare-Metal C, ARM Cortex-M | Direct register-level programming (`-nostdlib`) on STM32F103 (Blue Pill). Features custom startup vector table, SysTick low-power WFI sleep, Full-Duplex SPI, lock-free Ring Buffer, and **Circular DMA Ping-Pong streaming**. |
 | **03** | [**Firmware Test Automation & KPI Suite**](./03-Firmware-Test-Automation/) | Python, CI/CD, Verification | Automated hardware-in-the-loop (HIL) test harness and KPI regression framework. Generates real-time HTML test execution dashboards and latency metrics. |
 
@@ -22,9 +22,9 @@ Welcome to my embedded systems and firmware development portfolio repository. Th
 
 ## Technical Architecture Summaries
 
-### 1. [FreeRTOS Real-Time Controller (IEEE Publication)](./01-FreeRTOS-RealTime-Controller/)
+### 1. [FreeRTOS - RTTCS (IEEE Publication)](./01-FreeRTOS-RTTCS/)
 - **Publication:** *Intelligent Real-Time Traffic Signal System using FreeRTOS* ([IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
-- **Flowchart Diagram:** [View Task Execution Flowchart](./01-FreeRTOS-RealTime-Controller/#system-execution-flowchart)
+- **Flowchart Diagram:** [View Task Execution Flowchart](./01-FreeRTOS-RTTCS/#system-execution-flowchart)
 - **Key Achievements:**
   - Implemented dynamic runtime priority reassignment (`vTaskPrioritySet()`) based on IR sensor density detection across 4 lanes.
   - Designed cooperative priority handoff architecture using `vTaskSuspend()` and `vTaskResume()` cycle synchronization.
@@ -55,7 +55,7 @@ All major engineering reports, IEEE research papers, and technical project docum
 
 - [**IEEE Research Paper (RTITCS)**](https://ieeexplore.ieee.org/document/11135576) — *Intelligent Real-Time Traffic Signal System using FreeRTOS* (Published on [IEEE Xplore](https://ieeexplore.ieee.org/document/11135576)).
 - [**Major Project Report**](./reports/19BEE032_MAJOR%20PROJECT.pdf) — Comprehensive Capstone Engineering Project Report.
-- [**Minor Project Technical Report**](./01-FreeRTOS-RealTime-Controller/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
+- [**Minor Project Technical Report (RTTCS)**](./01-FreeRTOS-RTTCS/Project_Report.pdf) — Real-time embedded system architecture and firmware design.
 - [**SPI Protocol & Design (PnD) Report**](./reports/PnD_SPI.pdf) — Physical design, timing waveforms, and protocol verification of SPI bus interfacing.
 - [**Embedded Systems Project (ESP) Report**](./reports/23mre005_ESP_REPORT_SP.pdf) — Hardware peripheral interfacing and microcontroller integration.
 - [**Advanced Digital System Design: ALU**](./reports/ADSD_ALU.pdf) — Silicon-level Arithmetic Logic Unit design and verification.
