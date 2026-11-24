@@ -101,8 +101,7 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
 
 - **Programming Languages:** Embedded C (C99/C11, volatile pointers, bitwise operations, memory layout), Embedded C++, Python (Automation, Test Scripting), Verilog HDL.
 - **Architectures:** ARM Cortex-M4/M3 (STM32G431, STM32F103), Xtensa Dual-Core (ESP32), AVR (ATmega2560), Altera / Intel FPGA (Cyclone II).
-- **Motor Control & Power:** Field-Oriented Control (FOC), Space Vector PWM (SVPWM), Clarke/Park Transforms, Back-EMF Observers, 3-Phase Inverter Driving.
 - **RTOS & Systems:** FreeRTOS (Tasks, Queues, Semaphores, Mutexes, Event Groups), Bare-Metal Hardware Bring-up, Direct Register Manipulation.
 - **Communication Protocols:** SPI, UART, I2C, Cellular AT Commands (SIM800L), GPS telemetry, GPIO alternate functions.
 - **Lab & Debug Equipment:** Digilent Analog Discovery 2 (Logic Analyzer & Pattern Generator), Digital Storage Oscilloscope (DSO), JTAG / SWD (ST-Link V2, Keil uVision, OpenOCD, GDB).
-- **Tools & Build Systems:** STM32CubeIDE, STM32 Motor Control Workbench, Motor Profiler, GNU Arm Embedded Toolchain (`arm-none-eabi-gcc`), Keil MDK-ARM v5, Quartus II, Git.
+- **Tools & Build Systems:** STM32CubeIDE, GNU Arm Embedded Toolchain (`arm-none-eabi-gcc`), Keil MDK-ARM v5, Quartus II, Git, Makefiles.
