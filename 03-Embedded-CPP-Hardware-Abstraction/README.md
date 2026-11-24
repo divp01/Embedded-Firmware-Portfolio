@@ -2,7 +2,7 @@
 
 > **Core Technologies:** Embedded C++, ARM Cortex-M3 (STM32F103C8T6), Object-Oriented Firmware Design, Direct Register Manipulation  
 > **Bench Tools & Debug:** Keil uVision MDK-ARM v5, ST-Link V2, Breadboard Hardware Bench  
-> **Technical Documentation:** [View Architecture Report (Project_Report.pdf)](./Project_Report.pdf)
+> **Source Code & Documentation:** [Browse C++ Driver Source (`src/`)](./src/) • [View Architecture Report (Project_Report.pdf)](./Project_Report.pdf)
 
 ---
 
@@ -69,6 +69,10 @@ From a firmware engineering and low-level peripheral driver standpoint:
 
 ---
 
-## Technical Documentation
+## Source Code & Technical Documentation
 
+- [**`src/` Directory**](./src/): Complete C++ driver implementation:
+  - [`Led.h`](./src/Led.h): Peripheral base addresses, register definitions, strongly-typed enums, and class declaration.
+  - [`Led.cpp`](./src/Led.cpp): Constructor register initialization and atomic bitmask state actuation methods.
+  - [`main.cpp`](./src/main.cpp): Application entry point demonstrating object instantiation and actuation.
 - [Project_Report.pdf](./Project_Report.pdf): Engineering design report detailing register mapping, class diagrams, and bench results.
