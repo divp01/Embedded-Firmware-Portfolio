@@ -35,7 +35,7 @@ This project implements the real-time embedded firmware and telematics subsystem
 ### 2. Telematics & Security Firmware (ESP32)
 
 - **Vehicle Tracking & Cellular Connectivity:**
-  - Parses real-time GPS NMEA sentences (`$GPRMC`, `$GPGGA`) over a hardware UART interrupt stream to track location and speed.
+  - Ingests and parses real-time GPS location and telemetry data over UART.
   - Executes a non-blocking AT command state machine over serial with the SIM800L GSM/GPRS modem for persistent cloud synchronization.
 
 - **Dual-Mode Battery Swap Authentication:**

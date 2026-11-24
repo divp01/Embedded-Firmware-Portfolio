@@ -73,7 +73,7 @@ Welcome to my Embedded Systems & Firmware Engineering Portfolio. This repository
   - Implemented Field-Oriented Control (FOC) firmware algorithms: Clarke/Park vector transforms, decoupled $I_d$/$I_q$ PI current regulation loops, and Space Vector PWM (SVPWM) duty-cycle modulation.
   - Architected hybrid commutation state machine: Hall sensor feedback for low-speed/standstill startup and Back-EMF (BEMF) state observer for high-speed sensorless operation.
   - Developed ADC throttle digital filtering pipeline and interrupt-driven cruise control state machine with instantaneous, fail-safe brake override.
-  - Engineered ESP32 telematics firmware: non-blocking cellular AT command state machine (SIM800L), streaming NMEA GPS parser (NEO-6M), and dual-mode battery swap authentication (Cloud HTTP API with local captive Wi-Fi fallback and 3-attempt lockout security).
+  - Engineered ESP32 telematics firmware: cellular modem communication (SIM800L), real-time GPS location tracking (NEO-6M), and dual-mode battery swap authentication (Cloud HTTP API with local captive Wi-Fi fallback and 3-attempt lockout security).
   - Validated and tuned control loops on hardware bench using STM32 Motor Control Workbench and on-vehicle prototype.
 
 ---
@@ -108,6 +108,6 @@ Verified certificates are archived in the [**`certificates/`**](./certificates/)
 - **Architectures:** ARM Cortex-M4/M3 (STM32G431, STM32F103), Xtensa Dual-Core (ESP32), AVR (ATmega2560), Altera / Intel FPGA (Cyclone II).
 - **Motor Control & Power:** Field-Oriented Control (FOC), Space Vector PWM (SVPWM), Clarke/Park Transforms, Back-EMF Observers, 3-Phase Inverter Driving.
 - **RTOS & Systems:** FreeRTOS (Tasks, Queues, Semaphores, Mutexes, Event Groups), Bare-Metal Hardware Bring-up, Direct Register Manipulation.
-- **Communication Protocols:** SPI, UART, I2C, Cellular AT Commands (GSM/GPRS SIM800L), GPS NMEA Protocol, GPIO alternate functions.
+- **Communication Protocols:** SPI, UART, I2C, Cellular AT Commands (SIM800L), GPS telemetry, GPIO alternate functions.
 - **Lab & Debug Equipment:** Digilent Analog Discovery 2 (Logic Analyzer & Pattern Generator), Digital Storage Oscilloscope (DSO), JTAG / SWD (ST-Link V2, Keil uVision, OpenOCD, GDB).
 - **Tools & Build Systems:** STM32CubeIDE, STM32 Motor Control Workbench, Motor Profiler, GNU Arm Embedded Toolchain (`arm-none-eabi-gcc`), Keil MDK-ARM v5, Quartus II, Git.
